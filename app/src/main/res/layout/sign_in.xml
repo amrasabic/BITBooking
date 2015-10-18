@@ -46,4 +46,27 @@
         android:layout_marginTop="15dp"
         android:textColor="@color/white"
         android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="or"
+        android:layout_gravity="center_horizontal"
+        android:singleLine="true"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:id="@+id/go_to_sign_up"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textAllCaps="false"
+        android:background="@drawable/button_line_bcg"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
+        android:textSize="18dp"/>
 </LinearLayout>

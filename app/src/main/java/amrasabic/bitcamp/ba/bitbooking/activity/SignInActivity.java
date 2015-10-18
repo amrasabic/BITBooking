@@ -13,17 +13,18 @@ import retrofit.RestAdapter;
 
 public class SignInActivity extends Activity {
 
-    private EditText mUserName, mPassword;
-    private Button mSignIn;
+    private EditText mEmail, mPassword;
+    private Button mSignIn, mSignUp;
     private RestAdapter adapter;
     private BitBookingApi api;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_in);
 
-        mUserName = (EditText) findViewById(R.id.username);
+        mEmail = (EditText) findViewById(R.id.username);
         mPassword = (EditText) findViewById(R.id.password);
 
         adapter = new RestAdapter.Builder()
@@ -42,7 +43,7 @@ public class SignInActivity extends Activity {
                 startActivity(main);
                 finish();
 
-//                api.mSignIn(String.valueOf(mUserName.getText()), String.valueOf(mPassword.getText()), new Callback<Response>() {
+//                api.mSignIn(String.valueOf(mEmail.getText()), String.valueOf(mPassword.getText()), new Callback<Response>() {
 //                    @Override
 //                    public void success(Response response, Response response2) {
                 // if user successfully logs in opens list of hotels
@@ -59,6 +60,17 @@ public class SignInActivity extends Activity {
 //                });
 
             }
+        });
+
+        mSignUp = (Button) findViewById(R.id.go_to_sign_up);
+        mSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent main = new Intent("android.intent.action.SIGNUP");
+                startActivity(main);
+            }
+
         });
     }
 }
