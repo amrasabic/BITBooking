@@ -28,7 +28,7 @@ public class SignInActivity extends Activity {
         mPassword = (EditText) findViewById(R.id.password);
 
         adapter = new RestAdapter.Builder()
-                .setEndpoint("http://192.168.0.100:9000")
+                .setEndpoint("http://192.168.1.10:9000")
                 .build();
 
         api = adapter.create(BitBookingApi.class);
@@ -43,7 +43,7 @@ public class SignInActivity extends Activity {
                 startActivity(main);
                 finish();
 
-//                api.mSignIn(String.valueOf(mEmail.getText()), String.valueOf(mPassword.getText()), new Callback<Response>() {
+//                api.signIn(String.valueOf(mEmail.getText()), String.valueOf(mPassword.getText()), new Callback<Response>() {
 //                    @Override
 //                    public void success(Response response, Response response2) {
                 // if user successfully logs in opens list of hotels

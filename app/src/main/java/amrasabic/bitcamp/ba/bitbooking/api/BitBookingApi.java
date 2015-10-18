@@ -14,7 +14,14 @@ public interface BitBookingApi {
     @POST("/user/login")
     public void signIn(@Query("email") String email, @Query("password") String password, Callback<Response> callback);
 
+    @POST("/user/register/save")
+    public void signUp(@Query("email") String email, @Query("password") String password,
+                       @Query("passwordretype")String confirmPassword, @Query("firstname") String firstName,
+                       @Query("lastname") String lastName, @Query("phoneNumber") String phoneNumber, Callback<Response> callback);
+
     // string - route TODO
     @GET(" string - route TODO ")
     public void getHotels(Callback<List<Hotel>> callback);
+
+
 }
