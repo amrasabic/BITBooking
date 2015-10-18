@@ -1,4 +1,4 @@
-package amrasabic.bitcamp.ba.bitbooking;
+package amrasabic.bitcamp.ba.bitbooking.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import com.woxthebox.draglistview.DragListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.model.Hotel;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 import retrofit.Callback;

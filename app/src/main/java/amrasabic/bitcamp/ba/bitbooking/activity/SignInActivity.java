@@ -1,4 +1,4 @@
-package amrasabic.bitcamp.ba.bitbooking;
+package amrasabic.bitcamp.ba.bitbooking.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,13 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 import retrofit.RestAdapter;
 
-public class SignIn extends Activity {
+public class SignInActivity extends Activity {
 
-    private EditText username, password;
-    private Button signIn;
+    private EditText mUserName, mPassword;
+    private Button mSignIn;
     private RestAdapter adapter;
     private BitBookingApi api;
 
@@ -22,8 +23,8 @@ public class SignIn extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_in);
 
-        username = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
+        mUserName = (EditText) findViewById(R.id.username);
+        mPassword = (EditText) findViewById(R.id.password);
 
         adapter = new RestAdapter.Builder()
                 .setEndpoint("http://192.168.0.100:9000")
@@ -31,8 +32,8 @@ public class SignIn extends Activity {
 
         api = adapter.create(BitBookingApi.class);
 
-        signIn = (Button) findViewById(R.id.sign_in);
-        signIn.setOnClickListener(new View.OnClickListener() {
+        mSignIn = (Button) findViewById(R.id.sign_in);
+        mSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -41,10 +42,10 @@ public class SignIn extends Activity {
                 startActivity(main);
                 finish();
 
-//                api.signIn(String.valueOf(username.getText()), String.valueOf(password.getText()), new Callback<Response>() {
+//                api.mSignIn(String.valueOf(mUserName.getText()), String.valueOf(mPassword.getText()), new Callback<Response>() {
 //                    @Override
 //                    public void success(Response response, Response response2) {
-                        // if user successfully logs in opens list of hotels
+                // if user successfully logs in opens list of hotels
 //                        Intent main = new Intent("android.intent.action.BOOKING");
 //                        startActivity(main);
 //                        finish();

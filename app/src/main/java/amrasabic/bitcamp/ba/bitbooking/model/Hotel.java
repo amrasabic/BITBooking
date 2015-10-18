@@ -8,22 +8,22 @@ package amrasabic.bitcamp.ba.bitbooking.model;
 public class Hotel {
 
   //  @SerializedName("hotel")
-    private String hotelName;
+    private String mHotelName;
 
-  //  @SerializedName("rating")
-    private int rating;
+  //  @SerializedName("mRating")
+    private int mRating;
 
     public Hotel (String h, int r) {
-        this.hotelName = h;
-        this.rating = r;
+        this.mHotelName = h;
+        this.mRating = r;
     }
 
     public int getRating() {
-        return rating;
+        return mRating;
     }
 
     public String getHotelName() {
-        return hotelName;
+        return mHotelName;
     }
 
 }
