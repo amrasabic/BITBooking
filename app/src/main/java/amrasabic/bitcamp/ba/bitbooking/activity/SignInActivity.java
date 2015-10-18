@@ -28,7 +28,7 @@ public class SignInActivity extends Activity {
         mPassword = (EditText) findViewById(R.id.password);
 
         adapter = new RestAdapter.Builder()
-                .setEndpoint("http://192.168.1.10:9000")
+                .setEndpoint(String.valueOf(R.string.IP_ADDRESS))
                 .build();
 
         api = adapter.create(BitBookingApi.class);

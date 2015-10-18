@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="IP_ADDRESS">http://0.0.0.0:9000</string>
+</resources>
