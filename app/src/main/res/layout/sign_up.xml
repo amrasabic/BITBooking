@@ -95,7 +95,8 @@
         android:padding="10dp"
         android:textColor="@color/white"
         android:textCursorDrawable="@null"
-        android:singleLine="true"/>
+        android:singleLine="true"
+        android:inputType="number"/>
 
     <Button
         android:id="@+id/sign_up"

@@ -27,18 +27,24 @@ public class SignUpActivity extends Activity{
     private BitBookingApi api;
 
     /**
-     * Check password match method
-     * <p>
      * Compares with equals method password field and confirm password field.
-     * @return - boolean  value true if they are equal, else returns false
+     * Sends Toast if passwords doesn't match.
      */
-    private boolean checkPasswordMatch(){
-        if(mPassword.getText().toString().equals(mConfirmPasword.getText().toString())){
-            return true;
-        } else {
+    private boolean checkPasswordMatch(String password, String confirmPassword){
+        if(password.equals("") || confirmPassword.equals("")) {
+            Toast.makeText(SignUpActivity.this, "Enter matching passwords.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if(password.length() < 8) {
+            Toast.makeText(SignUpActivity.this, "Password should be al least 8 characters long and include special characters.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(!password.equals(confirmPassword)){
             Toast.makeText(SignUpActivity.this, "Passwords doesn't match.", Toast.LENGTH_SHORT).show();
             return false;
         }
+        return true;
     }
 
     /**
@@ -49,18 +55,55 @@ public class SignUpActivity extends Activity{
      *
      * @return - boolean value true if email is valid, else returns false
      */
-    private boolean validateEmail(){
+    private boolean validateEmail(String email){
         EmailValidator validator = EmailValidator.getInstance();
-
-        if(validator.isValid(mEmail.getText().toString())) {
-            return true;
-        } else {
+        if(email.equals("")) {
+            Toast.makeText(SignUpActivity.this, "Email is required.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(!validator.isValid(email)) {
             Toast.makeText(SignUpActivity.this, "Email is not valid.", Toast.LENGTH_SHORT).show();
             return false;
         }
-
+        return true;
     }
 
+    /**
+     *
+     * @param word
+     * @return
+     */
+    private boolean validateForOnyLetters(String word) {
+        if(word.equals("")) {
+            Toast.makeText(SignUpActivity.this, "Name field is required.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if(!word.matches("[a-zA-Z]+") && word.length() > 2){
+            Toast.makeText(SignUpActivity.this, "Name field can only contain letters.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     *
+     * @return
+     */
+    private boolean validateForOnlyDigits(String number) {
+        if(number.equals("")) {
+            Toast.makeText(SignUpActivity.this, "Phone number is required.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(!number.matches("[0-9]+") || ( number.length() < 15 && number.length() < 12)) {
+//            if(number.length() < 15 && number.length() > 12) {
+                Toast.makeText(SignUpActivity.this, "Phone number is not valid.", Toast.LENGTH_SHORT).show();
+                return false;
+//            }
+        }
+        return true;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,18 +127,32 @@ public class SignUpActivity extends Activity{
             @Override
             public void onClick(View v) {
                 // redirects back to sign in
-                boolean email = validateEmail();
-                boolean pass = checkPasswordMatch();
+                String email = mEmail.getText().toString();
+                String password = mPassword.getText().toString();
+                String confirmPassword = mConfirmPasword.getText().toString();
+                String firstName = mFirstName.getText().toString();
+                String lastName = mLastName.getText().toString();
+                String number = mPhoneNumber.getText().toString();
 
-                if(pass) {
-                    Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                validateEmail(email);
+
+                if(validateEmail(email)){
+                    checkPasswordMatch(password, confirmPassword);
+                    if(checkPasswordMatch(password, confirmPassword)) {
+                        validateForOnyLetters(firstName);
+                        if(validateForOnyLetters(firstName)){
+                            validateForOnyLetters(lastName);
+                            if(validateForOnyLetters(lastName)){
+                                validateForOnlyDigits(number);
+                                if(validateForOnlyDigits(number)) {
+                                    Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(intent);
+                                }
+                            }
+                        }
+                    }
                 }
-
-        //        Toast.makeText(SignUpActivity.this, "Validation is wrong.", Toast.LENGTH_SHORT).show();
-
-
 
 //                api.signUp(String.valueOf(mEmail.getText()), String.valueOf(mPassword.getText()),
 //                        String.valueOf(mConfirmPasword.getText()), String.valueOf(mFirstName.getText()),
