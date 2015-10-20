@@ -6,94 +6,103 @@
               android:background="@drawable/sing_in">
 
     <EditText
+        android:id="@+id/email"
+        android:hint="Email"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:id="@+id/email"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/whitebcg"
         android:layout_marginTop="135dp"
-        android:hint="Email"
         android:padding="10dp"
         android:textColor="@color/white"
-        android:textCursorDrawable="@null"/>
+        android:textCursorDrawable="@null"
+        android:inputType="textEmailAddress"/>
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
         android:id="@+id/enter_password"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/whitebcg"
         android:hint="Password"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textCursorDrawable="@null"/>
-
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/whitebcg"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textCursorDrawable="@null"
+        android:inputType="textPassword"
+        android:singleLine="true"/>
+
+    <EditText
         android:id="@+id/confirm_password"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/whitebcg"
         android:hint="Confirm password"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textCursorDrawable="@null"/>
-
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/whitebcg"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textCursorDrawable="@null"
+        android:inputType="textPassword"
+        android:singleLine="true"/>
+
+    <EditText
         android:id="@+id/first_name"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/whitebcg"
         android:hint="First name"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textCursorDrawable="@null"/>
-
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/whitebcg"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textCursorDrawable="@null"
+        android:singleLine="true"/>
+
+    <EditText
         android:id="@+id/last_name"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/whitebcg"
         android:hint="Last name"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textCursorDrawable="@null"/>
-
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:id="@+id/phone_number"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/whitebcg"
-        android:hint="Phone number"
         android:padding="10dp"
         android:textColor="@color/white"
-        android:textCursorDrawable="@null"/>
+        android:textCursorDrawable="@null"
+        android:singleLine="true"/>
+
+    <EditText
+        android:id="@+id/phone_number"
+        android:hint="Phone number"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/whitebcg"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textCursorDrawable="@null"
+        android:singleLine="true"
+        android:inputType="number"/>
 
     <Button
+        android:id="@+id/sign_up"
+        android:text="Sign Up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:id="@+id/sign_up"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
