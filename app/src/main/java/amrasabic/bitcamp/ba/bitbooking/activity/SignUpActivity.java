@@ -117,7 +117,7 @@ public class SignUpActivity extends Activity{
         mPhoneNumber = (EditText) findViewById(R.id.phone_number);
 
         adapter = new RestAdapter.Builder()
-                .setEndpoint(String.valueOf("http://10.202.23.160:9000"))
+                .setEndpoint(String.valueOf("http://ip_address:9000"))
                 .build();
 
         api = adapter.create(BitBookingApi.class);
