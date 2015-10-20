@@ -6,13 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
+import org.apache.commons.validator.routines.EmailValidator;
 
+/**
+ *
+ */
 public class SignUpActivity extends Activity{
 
     private EditText mEmail, mPassword, mConfirmPasword, mFirstName, mLastName, mPhoneNumber;
@@ -21,13 +26,39 @@ public class SignUpActivity extends Activity{
     private RestAdapter adapter;
     private BitBookingApi api;
 
-    private void checkPassword(){
-
-        if(mPassword.getText().equals(mConfirmPasword.getText())){
-
+    /**
+     * Check password match method
+     * <p>
+     * Compares with equals method password field and confirm password field.
+     * @return - boolean  value true if they are equal, else returns false
+     */
+    private boolean checkPasswordMatch(){
+        if(mPassword.getText().toString().equals(mConfirmPasword.getText().toString())){
+            return true;
         } else {
-
+            Toast.makeText(SignUpActivity.this, "Passwords doesn't match.", Toast.LENGTH_SHORT).show();
+            return false;
         }
+    }
+
+    /**
+     * Validate email method
+     * <p>
+     * This method is based on EmailValidator, and validate email address form email field.
+     * To use EmailValidator add this dependency: <b>compile 'commons-validator:commons-validator:1.4.0'</b>
+     *
+     * @return - boolean value true if email is valid, else returns false
+     */
+    private boolean validateEmail(){
+        EmailValidator validator = EmailValidator.getInstance();
+
+        if(validator.isValid(mEmail.getText().toString())) {
+            return true;
+        } else {
+            Toast.makeText(SignUpActivity.this, "Email is not valid.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
     }
 
     @Override
@@ -43,7 +74,7 @@ public class SignUpActivity extends Activity{
         mPhoneNumber = (EditText) findViewById(R.id.phone_number);
 
         adapter = new RestAdapter.Builder()
-                .setEndpoint(String.valueOf(R.string.IP_ADDRESS))
+                .setEndpoint(String.valueOf("http://10.202.23.160:9000"))
                 .build();
 
         api = adapter.create(BitBookingApi.class);
@@ -53,9 +84,17 @@ public class SignUpActivity extends Activity{
             @Override
             public void onClick(View v) {
                 // redirects back to sign in
-                Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                boolean email = validateEmail();
+                boolean pass = checkPasswordMatch();
+
+                if(pass) {
+                    Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+
+        //        Toast.makeText(SignUpActivity.this, "Validation is wrong.", Toast.LENGTH_SHORT).show();
+
 
 
 //                api.signUp(String.valueOf(mEmail.getText()), String.valueOf(mPassword.getText()),
