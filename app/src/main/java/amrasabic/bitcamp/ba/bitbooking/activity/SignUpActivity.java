@@ -15,9 +15,7 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import org.apache.commons.validator.routines.EmailValidator;
 
-/**
- *
- */
+
 public class SignUpActivity extends Activity{
 
     private EditText mEmail, mPassword, mConfirmPasword, mFirstName, mLastName, mPhoneNumber;
@@ -122,7 +120,7 @@ public class SignUpActivity extends Activity{
         mSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirects back to sign in
+
                 String email = mEmail.getText().toString();
                 String password = mPassword.getText().toString();
                 String confirmPassword = mConfirmPasword.getText().toString();
@@ -141,6 +139,9 @@ public class SignUpActivity extends Activity{
                             if(validateForOnyLetters(lastName)){
                                 validateForOnlyDigits(number);
                                 if(validateForOnlyDigits(number)) {
+
+                                    // redirects back to sign in
+                                    // TODO create toast on SignIn activity to check email and validate account
                                     Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(intent);
