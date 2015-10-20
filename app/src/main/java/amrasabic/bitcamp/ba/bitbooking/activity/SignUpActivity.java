@@ -48,8 +48,6 @@ public class SignUpActivity extends Activity{
     }
 
     /**
-     * Validate email method
-     * <p>
      * This method is based on EmailValidator, and validate email address form email field.
      * To use EmailValidator add this dependency: <b>compile 'commons-validator:commons-validator:1.4.0'</b>
      *
@@ -69,9 +67,9 @@ public class SignUpActivity extends Activity{
     }
 
     /**
-     *
-     * @param word
-     * @return
+     * Validates does the param String word contains only letters and is it longer then 2 letters.
+     * @param word - validates this string
+     * @return - boolean value true if word is valid and longer then 2 letters, else returns false and returns false for empty String
      */
     private boolean validateForOnyLetters(String word) {
         if(word.equals("")) {
@@ -88,8 +86,8 @@ public class SignUpActivity extends Activity{
     }
 
     /**
-     *
-     * @return
+     * Validates does the param String number contains only digits and is number length in range 12-15.
+     * @return boolean value true if number is valid and number length in range 12-15, else returns false and returns false for empty String
      */
     private boolean validateForOnlyDigits(String number) {
         if(number.equals("")) {
@@ -97,10 +95,8 @@ public class SignUpActivity extends Activity{
             return false;
         }
         if(!number.matches("[0-9]+") || ( number.length() < 15 && number.length() < 12)) {
-//            if(number.length() < 15 && number.length() > 12) {
                 Toast.makeText(SignUpActivity.this, "Phone number is not valid.", Toast.LENGTH_SHORT).show();
                 return false;
-//            }
         }
         return true;
     }
