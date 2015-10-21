@@ -13,10 +13,11 @@ import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
+
 import org.apache.commons.validator.routines.EmailValidator;
 
 
-public class SignUpActivity extends Activity{
+public class SignUpActivity extends Activity {
 
     private EditText mEmail, mPassword, mConfirmPasword, mFirstName, mLastName, mPhoneNumber;
     private Button mSignUp;
@@ -28,17 +29,17 @@ public class SignUpActivity extends Activity{
      * Compares with equals method password field and confirm password field.
      * Sends Toast if passwords doesn't match.
      */
-    private boolean checkPasswordMatch(String password, String confirmPassword){
-        if(password.equals("") || confirmPassword.equals("")) {
+    private boolean checkPasswordMatch(String password, String confirmPassword) {
+        if (password.equals("") || confirmPassword.equals("")) {
             Toast.makeText(SignUpActivity.this, "Enter matching passwords.", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        if(password.length() < 8) {
+        if (password.length() < 8) {
             Toast.makeText(SignUpActivity.this, "Password should be al least 8 characters long and include special characters.", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if(!password.equals(confirmPassword)){
+        if (!password.equals(confirmPassword)) {
             Toast.makeText(SignUpActivity.this, "Passwords doesn't match.", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -51,13 +52,13 @@ public class SignUpActivity extends Activity{
      *
      * @return - boolean value true if email is valid, else returns false
      */
-    private boolean validateEmail(String email){
+    private boolean validateEmail(String email) {
         EmailValidator validator = EmailValidator.getInstance();
-        if(email.equals("")) {
+        if (email.equals("")) {
             Toast.makeText(SignUpActivity.this, "Email is required.", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if(!validator.isValid(email)) {
+        if (!validator.isValid(email)) {
             Toast.makeText(SignUpActivity.this, "Email is not valid.", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -66,16 +67,17 @@ public class SignUpActivity extends Activity{
 
     /**
      * Validates does the param String word contains only letters and is it longer then 2 letters.
+     *
      * @param word - validates this string
      * @return - boolean value true if word is valid and longer then 2 letters, else returns false and returns false for empty String
      */
     private boolean validateForOnyLetters(String word) {
-        if(word.equals("")) {
+        if (word.equals("")) {
             Toast.makeText(SignUpActivity.this, "Name field is required.", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        if(!word.matches("[a-zA-Z]+") && word.length() > 2){
+        if (!word.matches("[a-zA-Z]+") && word.length() > 2) {
             Toast.makeText(SignUpActivity.this, "Name field can only contain letters.", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -85,19 +87,21 @@ public class SignUpActivity extends Activity{
 
     /**
      * Validates does the param String number contains only digits and is number length in range 12-15.
+     *
      * @return boolean value true if number is valid and number length in range 12-15, else returns false and returns false for empty String
      */
     private boolean validateForOnlyDigits(String number) {
-        if(number.equals("")) {
+        if (number.equals("")) {
             Toast.makeText(SignUpActivity.this, "Phone number is required.", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if(!number.matches("[0-9]+") || ( number.length() < 15 && number.length() < 12)) {
-                Toast.makeText(SignUpActivity.this, "Phone number is not valid.", Toast.LENGTH_SHORT).show();
-                return false;
+        if (!number.matches("[0-9]+") || (number.length() < 15 && number.length() < 12)) {
+            Toast.makeText(SignUpActivity.this, "Phone number is not valid.", Toast.LENGTH_SHORT).show();
+            return false;
         }
         return true;
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,47 +132,38 @@ public class SignUpActivity extends Activity{
                 String lastName = mLastName.getText().toString();
                 String number = mPhoneNumber.getText().toString();
 
-                validateEmail(email);
-
-                if(validateEmail(email)){
-                    checkPasswordMatch(password, confirmPassword);
-                    if(checkPasswordMatch(password, confirmPassword)) {
-                        validateForOnyLetters(firstName);
-                        if(validateForOnyLetters(firstName)){
-                            validateForOnyLetters(lastName);
-                            if(validateForOnyLetters(lastName)){
-                                validateForOnlyDigits(number);
-                                if(validateForOnlyDigits(number)) {
-
+                if (validateEmail(email)) {
+                    if (checkPasswordMatch(password, confirmPassword)) {
+                        if (validateForOnyLetters(firstName)) {
+                            if (validateForOnyLetters(lastName)) {
+                                if (validateForOnlyDigits(number)) {
                                     // redirects back to sign in
                                     // TODO create toast on SignIn activity to check email and validate account
-                                    Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
-                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    startActivity(intent);
+                                    api.signUp(String.valueOf(mEmail.getText()), String.valueOf(mPassword.getText()),
+                                            String.valueOf(mConfirmPasword.getText()), String.valueOf(mFirstName.getText()),
+                                            String.valueOf(mLastName.getText()), String.valueOf(mPhoneNumber.getText()),
+                                            new Callback<retrofit.client.Response>() {
+
+                                                @Override
+                                                public void success(retrofit.client.Response response, retrofit.client.Response response2) {
+                                                    int smthing = 0;
+                                                    Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+                                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                    startActivity(intent);
+                                                }
+
+                                                @Override
+                                                public void failure(RetrofitError error) {
+                                                    int smthing = 0;
+                                                }
+                                            });
                                 }
                             }
                         }
                     }
                 }
 
-//                api.signUp(String.valueOf(mEmail.getText()), String.valueOf(mPassword.getText()),
-//                        String.valueOf(mConfirmPasword.getText()), String.valueOf(mFirstName.getText()),
-//                        String.valueOf(mLastName.getText()), String.valueOf(mPhoneNumber.getText()),
-//                        new Callback<retrofit.client.Response>() {
-//
-//                            @Override
-//                            public void success(retrofit.client.Response response, retrofit.client.Response response2) {
-//                                int smthing = 0;
-//                                Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
-//                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                                startActivity(intent);
-//                            }
-//
-//                            @Override
-//                            public void failure(RetrofitError error) {
-//                                int smthing = 0;
-//                            }
-//                        });
+
             }
         });
     }
