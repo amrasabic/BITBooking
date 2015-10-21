@@ -57,40 +57,38 @@ public class SignInActivity extends Activity {
         mSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // this is temporary - can log in without any fields filled
-                for(int i = 0; i < mUsers.size(); i++){
-                    if(mUsers.get(i).getEmail().equals(mEmail.getText().toString()) && mUsers.get(i).getPassword().equals(mPassword.getText().toString())) {
-                            Intent main = new Intent("android.intent.action.BOOKING");
-                            startActivity(main);
-                            break;
-
-                    }
-
-                    if (i == mUsers.size() - 1){
-                        Toast.makeText(SignInActivity.this, "Incorrect email or password! Try again.", Toast.LENGTH_SHORT).show();
-                    }
-                }
+//                for(int i = 0; i < mUsers.size(); i++){
+//                    if(mUsers.get(i).getEmail().equals(mEmail.getText().toString()) && mUsers.get(i).getPassword().equals(mPassword.getText().toString())) {
+//                            Intent main = new Intent("android.intent.action.BOOKING");
+//                            startActivity(main);
+//                            break;
+//
+//                    }
+//
+//                    if (i == mUsers.size() - 1){
+//                        Toast.makeText(SignInActivity.this, "Incorrect email or password! Try again.", Toast.LENGTH_SHORT).show();
+//                    }
+//                }
 
 //               finish();
 
-//                api.signIn(String.valueOf(mEmail.getText()), String.valueOf(mPassword.getText()), new Callback<Response>() {
-//                    @Override
-//                    public void success(Response response, Response response2) {
-//                // if user successfully logs in opens list of hotels
-//                        int smthing = 0;
-//                        Intent main = new Intent("android.intent.action.BOOKING");
-//                        startActivity(main);
-////                        finish();
-//                    }
-//
-//                    @Override
-//                    public void failure(RetrofitError error) {
-//                         // TODO if log in fails
-//                        int smthing = 0;
-//                         Toast.makeText(SignInActivity.this, "Incorrect email or password! Try again.", Toast.LENGTH_SHORT).show();
-//
-//                    }
-//                });
+                api.signIn(String.valueOf(mEmail.getText()), String.valueOf(mPassword.getText()), new Callback<Response>() {
+                    @Override
+                    public void success(Response response, Response response2) {
+                        // if user successfully logs in opens list of hotels
+                        Intent main = new Intent("android.intent.action.BOOKING");
+                        startActivity(main);
+                        finish();
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+                        // if user log in fails make Toast
+                        Toast.makeText(SignInActivity.this, "Incorrect email or password! Try again.", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
             }
         });
@@ -99,7 +97,6 @@ public class SignInActivity extends Activity {
         mSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent main = new Intent("android.intent.action.SIGNUP");
                 startActivity(main);
             }

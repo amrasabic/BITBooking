@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         adapter = new RestAdapter.Builder()
-                .setEndpoint("http://192.168.0.100:9000")
+                .setEndpoint("http://ip_address:9000")
                 .build();
 
         api = adapter.create(BitBookingApi.class);
@@ -45,32 +45,18 @@ public class MainActivity extends AppCompatActivity {
         api.getHotels(new Callback<List<Hotel>>() {
             @Override
             public void success(List<Hotel> response, Response response2) {
-                //
-//                mHotelsAdapter = new HotelsAdapter(response, R.layout.hotel_item, R.id.item_layout, true);
-//                mHotelsList = (DragListView) findViewById(R.id.hotels_list);
-//                mHotelsList.setLayoutManager(new GridLayoutManager(getApplication(), 2));
-//                mHotelsList.setAdapter(mHotelsAdapter, true);
+
+                mHotelsAdapter = new HotelsAdapter(response, R.layout.hotel_item, R.id.item_layout, true);
+                mHotelsList = (DragListView) findViewById(R.id.hotels_list);
+                mHotelsList.setLayoutManager(new GridLayoutManager(getApplication(), 2));
+                mHotelsList.setAdapter(mHotelsAdapter, true);
             }
 
             @Override
             public void failure(RetrofitError error) {
-
+                // TODO: 10/21/15
             }
         });
-
-        hotels.add(new Hotel("Bristol", 4));
-        hotels.add(new Hotel("Evropa", 2));
-        hotels.add(new Hotel("Hercegovina", 3));
-        hotels.add(new Hotel("Cristal", 4));
-        hotels.add(new Hotel("Hilton", 5));
-        hotels.add(new Hotel("Radon Plaza", 5));
-        hotels.add(new Hotel("Marriot", 5));
-        hotels.add(new Hotel("Hollywood", 3));
-
-        mHotelsAdapter = new HotelsAdapter(hotels, R.layout.hotel_item, R.id.item_layout, true);
-        mHotelsList = (DragListView) findViewById(R.id.hotels_list);
-        mHotelsList.setLayoutManager(new GridLayoutManager(getApplication(), 2));
-        mHotelsList.setAdapter(mHotelsAdapter, true);
 
     }
 
@@ -120,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onItemClicked(View view) {
-
+                // TODO: 10/21/15
             }
         }
     }

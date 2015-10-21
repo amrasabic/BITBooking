@@ -1,22 +1,16 @@
 package amrasabic.bitcamp.ba.bitbooking.model;
 
-//import com.google.gson.annotations.SerializedName;
-//import org.parceler.Parcel;
+import com.google.gson.annotations.SerializedName;
+import org.parceler.Parcel;
 
-
-//@Parcel
+@Parcel
 public class Hotel {
 
-  //  @SerializedName("hotel")
+    @SerializedName("name")
     private String mHotelName;
 
-  //  @SerializedName("mRating")
+    @SerializedName("stars")
     private int mRating;
-
-    public Hotel (String h, int r) {
-        this.mHotelName = h;
-        this.mRating = r;
-    }
 
     public int getRating() {
         return mRating;

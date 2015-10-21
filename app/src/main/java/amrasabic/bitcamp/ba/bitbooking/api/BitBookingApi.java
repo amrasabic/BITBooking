@@ -20,8 +20,9 @@ public interface BitBookingApi {
                        @Query("lastname") String lastName, @Query("phoneNumber") String phoneNumber, Callback<Response> callback);
 
     // string - route TODO
-    @GET(" string - route TODO ")
+    @GET("/api/hotels")
     public void getHotels(Callback<List<Hotel>> callback);
+
 
 
 }
