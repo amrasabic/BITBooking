@@ -19,11 +19,13 @@ import org.apache.commons.validator.routines.EmailValidator;
 
 public class SignUpActivity extends Activity {
 
+
     private EditText mEmail, mPassword, mConfirmPasword, mFirstName, mLastName, mPhoneNumber;
     private Button mSignUp;
 
     private RestAdapter adapter;
     private BitBookingApi api;
+
 
     /**
      * Compares with equals method password field and confirm password field.
@@ -146,7 +148,6 @@ public class SignUpActivity extends Activity {
 
                                                 @Override
                                                 public void success(retrofit.client.Response response, retrofit.client.Response response2) {
-                                                    int smthing = 0;
                                                     Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
                                                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                     startActivity(intent);
@@ -154,7 +155,7 @@ public class SignUpActivity extends Activity {
 
                                                 @Override
                                                 public void failure(RetrofitError error) {
-                                                    int smthing = 0;
+                                                    // TODO: 10/22/15  
                                                 }
                                             });
                                 }

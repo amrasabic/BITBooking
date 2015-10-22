@@ -11,4 +11,6 @@
 
     <string name="sign_in">Sign in</string>
     <string name="sign_up">Sign up</string>
+
+    <string name="sign_up_toast">Check email and activate account.</string>
 </resources>
