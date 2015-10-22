@@ -11,15 +11,15 @@
         android:background="@drawable/sing_in">
 
         <EditText
+            android:id="@+id/username"
+            android:hint="@string/email"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:id="@+id/username"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/whitebcg"
             android:layout_marginTop="135dp"
-            android:hint="Email"
             android:padding="10dp"
             android:textColor="@color/white"
             android:textCursorDrawable="@null"
@@ -27,15 +27,15 @@
             android:singleLine="true"/>
 
         <EditText
+            android:id="@+id/password"
+            android:hint="@string/password"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:id="@+id/password"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/whitebcg"
-            android:hint="Password"
             android:padding="10dp"
             android:textColor="@color/white"
             android:textCursorDrawable="@null"
@@ -43,10 +43,10 @@
             android:singleLine="true"/>
 
         <Button
+            android:id="@+id/sign_in"
+            android:text="@string/sign_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign In"
-            android:id="@+id/sign_in"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -57,19 +57,19 @@
             android:textSize="18dp"/>
 
         <TextView
+            android:text="or"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="or"
             android:layout_gravity="center_horizontal"
             android:singleLine="true"
             android:textColor="@color/white"/>
 
         <Button
+            android:id="@+id/go_to_sign_up"
+            android:text="@string/sign_up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:id="@+id/go_to_sign_up"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
