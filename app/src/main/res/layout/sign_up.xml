@@ -5,6 +5,13 @@
               android:layout_height="match_parent"
               android:background="@drawable/sing_in">
 
+    <LinearLayout
+        android:id="@+id/card_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#15000000"
+        android:orientation="vertical"/>
+
     <EditText
         android:id="@+id/email"
         android:hint="@string/email"

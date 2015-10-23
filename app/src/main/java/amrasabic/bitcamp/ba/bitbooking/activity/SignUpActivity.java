@@ -16,16 +16,13 @@ import retrofit.RetrofitError;
 
 import org.apache.commons.validator.routines.EmailValidator;
 
-
 public class SignUpActivity extends Activity {
-
 
     private EditText mEmail, mPassword, mConfirmPasword, mFirstName, mLastName, mPhoneNumber;
     private Button mSignUp;
 
     private RestAdapter adapter;
     private BitBookingApi api;
-
 
     /**
      * Compares with equals method password field and confirm password field.
@@ -140,7 +137,6 @@ public class SignUpActivity extends Activity {
                             if (validateForOnyLetters(lastName)) {
                                 if (validateForOnlyDigits(number)) {
                                     // redirects back to sign in
-                                    // TODO create toast on SignIn activity to check email and validate account
                                     api.signUp(String.valueOf(mEmail.getText()), String.valueOf(mPassword.getText()),
                                             String.valueOf(mConfirmPasword.getText()), String.valueOf(mFirstName.getText()),
                                             String.valueOf(mLastName.getText()), String.valueOf(mPhoneNumber.getText()),
@@ -149,13 +145,13 @@ public class SignUpActivity extends Activity {
                                                 @Override
                                                 public void success(retrofit.client.Response response, retrofit.client.Response response2) {
                                                     Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
-                                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                    Toast.makeText(SignUpActivity.this, R.string.sign_up_toast, Toast.LENGTH_LONG).show();
                                                     startActivity(intent);
                                                 }
 
                                                 @Override
                                                 public void failure(RetrofitError error) {
-                                                    // TODO: 10/22/15  
+                                                    // TODO: 10/22/15
                                                 }
                                             });
                                 }
@@ -163,7 +159,6 @@ public class SignUpActivity extends Activity {
                         }
                     }
                 }
-
 
             }
         });

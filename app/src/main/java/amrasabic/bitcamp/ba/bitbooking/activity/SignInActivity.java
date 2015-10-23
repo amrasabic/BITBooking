@@ -2,12 +2,16 @@ package amrasabic.bitcamp.ba.bitbooking.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.github.johnpersano.supertoasts.SuperCardToast;
+import com.github.johnpersano.supertoasts.SuperToast;
 
 import java.util.ArrayList;
 
@@ -19,7 +23,6 @@ import retrofit.RestAdapter;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
-
 
 public class SignInActivity extends Activity {
 
@@ -81,7 +84,7 @@ public class SignInActivity extends Activity {
                         // if user successfully logs in opens list of hotels
                         Intent main = new Intent("android.intent.action.BOOKING");
                         startActivity(main);
-                        finish();
+//                        finish();
                     }
 
                     @Override
@@ -90,7 +93,6 @@ public class SignInActivity extends Activity {
                         Toast.makeText(SignInActivity.this, "Incorrect email or password! Try again.", Toast.LENGTH_SHORT).show();
                     }
                 });
-
             }
         });
 
@@ -104,7 +106,4 @@ public class SignInActivity extends Activity {
 
         });
     }
-
-
-
 }

@@ -12,6 +12,14 @@ public class Hotel {
     @SerializedName("stars")
     private int mRating;
 
+    public Hotel() {
+    }
+
+    public Hotel(String hotelName, int rating) {
+        mHotelName = hotelName;
+        mRating = rating;
+    }
+
     public int getRating() {
         return mRating;
     }
