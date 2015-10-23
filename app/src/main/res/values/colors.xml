@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0c7e8f</color>
+    <color name="colorPrimaryDark">#6fcefa</color>
+    <color name="colorAccent">#77000000</color>
+
+    <color name="primary_material_light_1">#9c27b0</color>
+
+    <item name="topStoriesColor" type="color">#6fcefa</item>
+    <item name="darkColor" type="color">#353535</item>
+    <item name="darkColorPressed" type="color">#3d3d3d</item>
+    <item name="dark2Color" type="color">#252525</item>
+    <item name="lightColor" type="color">#ededed</item>
+    <item name="white" type="color">#FFF</item>
+    <item name="black" type="color">#000</item>
+    <item name="yellow" type="color">#FF9811</item>
+    <item name="red" type="color">#ff8e8e</item>
+    <item name="lightBlue" type="color">#00B8F5</item>
+    <item name="lightBluePressed" type="color">#0c7e8f</item>
+    <item name="lightGray" type="color">#EEEEEE</item>
+    <item name="lightGrayOne" type="color">#6a6a6a</item>
+    <item name="tipColor" type="color">#fee49f</item>
+
+    <drawable name="transparent">#00ffffff</drawable>
+    <drawable name="semitransparent_white">#77ffffff</drawable>
+    <drawable name="semitransparent_black">#77000000</drawable>
+
+</resources>

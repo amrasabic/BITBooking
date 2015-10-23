@@ -1,4 +1,4 @@
-package com.example.amrasabic.bitbooking;
+package amrasabic.bitcamp.ba.bitbooking;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
