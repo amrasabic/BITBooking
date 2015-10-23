@@ -58,6 +58,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        hotels.add(new Hotel("Bristol", 4));
+//        hotels.add(new Hotel("Evropa", 2));
+//        hotels.add(new Hotel("Hercegovina", 3));
+//        hotels.add(new Hotel("Cristal", 4));
+//        hotels.add(new Hotel("Hilton", 5));
+//        hotels.add(new Hotel("Radon Plaza", 5));
+//        hotels.add(new Hotel("Marriot", 5));
+//        hotels.add(new Hotel("Hollywood", 3));
+//
+//        mHotelsAdapter = new HotelsAdapter(hotels, R.layout.hotel_item, R.id.item_layout, true);
+//        mHotelsList = (DragListView) findViewById(R.id.hotels_list);
+//        mHotelsList.setLayoutManager(new GridLayoutManager(getApplication(), 2));
+//        mHotelsList.setAdapter(mHotelsAdapter, true);
     }
 
     public class HotelsAdapter extends DragItemAdapter<Hotel, HotelsAdapter.ViewHolder> {
