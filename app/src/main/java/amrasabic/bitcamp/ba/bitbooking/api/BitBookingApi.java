@@ -3,6 +3,7 @@ package amrasabic.bitcamp.ba.bitbooking.api;
 import java.util.List;
 
 import amrasabic.bitcamp.ba.bitbooking.model.Hotel;
+import amrasabic.bitcamp.ba.bitbooking.model.Room;
 import retrofit.Callback;
 import retrofit.client.Response;
 import retrofit.http.GET;
@@ -19,10 +20,10 @@ public interface BitBookingApi {
                        @Query("passwordretype")String confirmPassword, @Query("firstname") String firstName,
                        @Query("lastname") String lastName, @Query("phoneNumber") String phoneNumber, Callback<Response> callback);
 
-    // string - route TODO
     @GET("/api/hotels")
     public void getHotels(Callback<List<Hotel>> callback);
 
-
+    @GET("/api/rooms")
+    public void getHotelRooms(@Query("id") int id, Callback<List<Room>> callback);
 
 }
