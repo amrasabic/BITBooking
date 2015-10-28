@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
 
-        <activity android:name=".activity.SignInActivity" >
+        <activity
+            android:name=".activity.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +20,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.MainActivity" >
+        <activity
+            android:name=".activity.HotelActivity">
             <intent-filter>
                 <action android:name="android.intent.action.BOOKING" />
 
@@ -27,9 +29,26 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.SignUpActivity" >
+        <activity
+            android:name=".activity.SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SIGNUP" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.RoomActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.ROOMS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.ReservationActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.RESERVATION" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

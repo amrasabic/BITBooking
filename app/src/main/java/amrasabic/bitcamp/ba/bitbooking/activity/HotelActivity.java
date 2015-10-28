@@ -1,6 +1,7 @@
 package amrasabic.bitcamp.ba.bitbooking.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.LayoutInflater;
@@ -11,30 +12,28 @@ import android.widget.TextView;
 import com.woxthebox.draglistview.DragItemAdapter;
 import com.woxthebox.draglistview.DragListView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import amrasabic.bitcamp.ba.bitbooking.R;
-import amrasabic.bitcamp.ba.bitbooking.model.Hotel;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
+import amrasabic.bitcamp.ba.bitbooking.activity.RoomActivity;
+import amrasabic.bitcamp.ba.bitbooking.model.Hotel;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class HotelActivity extends Activity {
 
     private RestAdapter adapter;
     private BitBookingApi api;
     private HotelsAdapter mHotelsAdapter;
     private DragListView mHotelsList;
 
-    private List<Hotel> hotels = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.hotel_list);
 
         adapter = new RestAdapter.Builder()
                 .setEndpoint("http://ip_address:9000")
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void success(List<Hotel> response, Response response2) {
 
-                mHotelsAdapter = new HotelsAdapter(response, R.layout.hotel_item, R.id.item_layout, true);
+                mHotelsAdapter = new HotelsAdapter(response, R.layout.hotel_fragment, R.id.item_layout, true);
                 mHotelsList = (DragListView) findViewById(R.id.hotels_list);
                 mHotelsList.setLayoutManager(new GridLayoutManager(getApplication(), 2));
                 mHotelsList.setAdapter(mHotelsAdapter, true);
@@ -58,19 +57,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        hotels.add(new Hotel("Bristol", 4));
-//        hotels.add(new Hotel("Evropa", 2));
-//        hotels.add(new Hotel("Hercegovina", 3));
-//        hotels.add(new Hotel("Cristal", 4));
-//        hotels.add(new Hotel("Hilton", 5));
-//        hotels.add(new Hotel("Radon Plaza", 5));
-//        hotels.add(new Hotel("Marriot", 5));
-//        hotels.add(new Hotel("Hollywood", 3));
-//
-//        mHotelsAdapter = new HotelsAdapter(hotels, R.layout.hotel_item, R.id.item_layout, true);
-//        mHotelsList = (DragListView) findViewById(R.id.hotels_list);
-//        mHotelsList.setLayoutManager(new GridLayoutManager(getApplication(), 2));
-//        mHotelsList.setAdapter(mHotelsAdapter, true);
     }
 
     public class HotelsAdapter extends DragItemAdapter<Hotel, HotelsAdapter.ViewHolder> {
@@ -98,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
             super.onBindViewHolder(holder, position);
             holder.hotelName.setText(mItemList.get(position).getHotelName());
             holder.rating.setText(Integer.toString(mItemList.get(position).getRating()));
+            holder.itemView.setTag(mItemList.get(position).getId());
         }
 
         @Override
@@ -105,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             return position;
         }
 
-        public class ViewHolder extends DragItemAdapter<Hotel, HotelsAdapter.ViewHolder>.ViewHolder {
+        public class ViewHolder extends DragItemAdapter<Hotel, ViewHolder>.ViewHolder {
 
             public TextView rating;
             public TextView hotelName;
@@ -119,7 +106,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onItemClicked(View view) {
-                // TODO: 10/21/15
+                Intent i = new Intent(HotelActivity.this, RoomActivity.class);
+                i.putExtra("id", (int) view.getTag());
+                startActivity(i);
             }
         }
     }

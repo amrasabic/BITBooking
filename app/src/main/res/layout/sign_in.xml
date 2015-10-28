@@ -3,14 +3,12 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@drawable/sing_in">
+              android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/card_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#15000000"
         android:orientation="vertical" />
 
     <EditText
@@ -21,10 +19,9 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/whitebcg"
-        android:layout_marginTop="135dp"
+        android:layout_marginTop="125dp"
         android:padding="10dp"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:textCursorDrawable="@null"
         android:inputType="textEmailAddress"
         android:singleLine="true"/>
@@ -38,9 +35,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/whitebcg"
         android:padding="10dp"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:textCursorDrawable="@null"
         android:inputType="textPassword"
         android:singleLine="true"/>
@@ -54,10 +50,10 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:textAllCaps="false"
-        android:background="@drawable/button_line_bcg"
         android:layout_marginTop="15dp"
         android:textColor="@color/white"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        android:background="@color/colorPrimary"/>
 
     <TextView
         android:text="or"
@@ -66,7 +62,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_gravity="center_horizontal"
         android:singleLine="true"
-        android:textColor="@color/white"/>
+        android:textColor="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/go_to_sign_up"
@@ -77,8 +73,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:textAllCaps="false"
-        android:background="@drawable/button_line_bcg"
         android:layout_marginTop="15dp"
-        android:textColor="@color/white"
-        android:textSize="18dp"/>
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dp"
+        android:background="#B9B9B9"/>
 </LinearLayout>
