@@ -12,7 +12,6 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
 
     private static List<Room> mRooms;
 
-
     public MyPagerAdapter(android.support.v4.app.FragmentManager fm, List<Room> rooms) {
         super(fm);
         this.mRooms = rooms;

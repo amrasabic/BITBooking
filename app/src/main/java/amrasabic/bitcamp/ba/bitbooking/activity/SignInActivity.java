@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import amrasabic.bitcamp.ba.bitbooking.Helper;
 import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 
@@ -33,7 +34,7 @@ public class SignInActivity extends AppCompatActivity {
         mPassword = (EditText) findViewById(R.id.password);
 
         adapter = new RestAdapter.Builder()
-                .setEndpoint("http://ip_address:9000")
+                .setEndpoint(Helper.IP_ADDRESS)
                 .build();
 
         api = adapter.create(BitBookingApi.class);

@@ -4,11 +4,13 @@ import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
 
-/**
- * Created by stvorenje on 10/27/15.
- */
+import java.util.List;
+
 @Parcel
 public class Room {
+
+    @SerializedName("id")
+    public int mRoomId;
 
     @SerializedName("name")
     private String roomName;
@@ -22,6 +24,13 @@ public class Room {
     @SerializedName("description")
     private String description;
 
+    @SerializedName("prices")
+    private List<Price> mRoomPrices;
+
+
+    @SerializedName("prices")
+    private List<Image> mRoomImages;
+
     public Room() {
 
     }
@@ -31,6 +40,10 @@ public class Room {
         this.numberOfBeds = numberOfBeds;
         this.roomType = roomType;
         this.description = description;
+    }
+
+    public int getRoomId() {
+        return mRoomId;
     }
 
     public String getRoomName() {
@@ -63,5 +76,13 @@ public class Room {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<Price> getRoomPrices() {
+        return mRoomPrices;
+    }
+
+    public List<Image> getRoomImages() {
+        return mRoomImages;
     }
 }

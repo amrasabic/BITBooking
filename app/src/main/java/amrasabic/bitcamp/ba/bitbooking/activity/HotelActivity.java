@@ -14,9 +14,9 @@ import com.woxthebox.draglistview.DragListView;
 
 import java.util.List;
 
+import amrasabic.bitcamp.ba.bitbooking.Helper;
 import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
-import amrasabic.bitcamp.ba.bitbooking.activity.RoomActivity;
 import amrasabic.bitcamp.ba.bitbooking.model.Hotel;
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -36,8 +36,8 @@ public class HotelActivity extends Activity {
         setContentView(R.layout.hotel_list);
 
         adapter = new RestAdapter.Builder()
-                .setEndpoint("http://ip_address:9000")
-                .build();
+                .setEndpoint(Helper.IP_ADDRESS)
+                        .build();
 
         api = adapter.create(BitBookingApi.class);
 
@@ -84,7 +84,7 @@ public class HotelActivity extends Activity {
             super.onBindViewHolder(holder, position);
             holder.hotelName.setText(mItemList.get(position).getHotelName());
             holder.rating.setText(Integer.toString(mItemList.get(position).getRating()));
-            holder.itemView.setTag(mItemList.get(position).getId());
+            holder.itemView.setTag(mItemList.get(position).getHotelId());
         }
 
         @Override

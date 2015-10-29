@@ -3,11 +3,13 @@ package amrasabic.bitcamp.ba.bitbooking.api;
 import java.util.List;
 
 import amrasabic.bitcamp.ba.bitbooking.model.Hotel;
+import amrasabic.bitcamp.ba.bitbooking.model.Price;
 import amrasabic.bitcamp.ba.bitbooking.model.Room;
 import retrofit.Callback;
 import retrofit.client.Response;
 import retrofit.http.GET;
 import retrofit.http.POST;
+import retrofit.http.Path;
 import retrofit.http.Query;
 
 public interface BitBookingApi {
@@ -23,7 +25,11 @@ public interface BitBookingApi {
     @GET("/api/hotels")
     public void getHotels(Callback<List<Hotel>> callback);
 
-    @GET("/api/rooms")
-    public void getHotelRooms(@Query("id") int id, Callback<List<Room>> callback);
+    @GET("/api/rooms/{id}")
+    public void getHotelRooms(@Path("id") int id, Callback<List<Room>> callback);
+
+    @GET("/api/rooms/{id}")
+    public void getRoomPrices(@Path("id") int id, Callback<List<Price>> callback);
+
 
 }

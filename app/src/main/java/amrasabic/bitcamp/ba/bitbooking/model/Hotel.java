@@ -7,12 +7,12 @@ import org.parceler.Parcel;
 @Parcel
 public class Hotel {
 
-    public Integer getId() {
-        return mId;
+    public Integer getHotelId() {
+        return mHotelId;
     }
 
     @SerializedName("id")
-    private Integer mId;
+    private Integer mHotelId;
 
     @SerializedName("name")
     private String mHotelName;
@@ -50,4 +50,19 @@ public class Hotel {
         return mHotelName;
     }
 
+    public String getAddress() {
+        return mAddress;
+    }
+
+    public String getCity() {
+        return mCity;
+    }
+
+    public String getCountry() {
+        return mCountry;
+    }
+
+    public String getDescription() {
+        return mDescription;
+    }
 }

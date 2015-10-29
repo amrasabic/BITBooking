@@ -14,7 +14,6 @@
         android:layout_height="165dp"
         android:id="@+id/imageView"
         android:layout_gravity="top"
-        android:src="@drawable/room"
         android:scaleType="fitXY"/>
 
     <ImageView
