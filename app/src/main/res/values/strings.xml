@@ -13,4 +13,11 @@
     <string name="sign_up">Sign up</string>
 
     <string name="sign_up_toast">Check email and activate account.</string>
+
+    <string	name="date_picker_title">Choose date:</string>
+
+    <string name="date_label_set">Press the button to set the date</string>
+    <string name="date_button_set">Set Date</string>
+    <string name="date_view_set">From: </string>
+    <string name="date_selected"></string>
 </resources>

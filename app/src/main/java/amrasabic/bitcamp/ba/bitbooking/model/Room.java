@@ -28,7 +28,7 @@ public class Room {
     private List<Price> mRoomPrices;
 
 
-    @SerializedName("prices")
+    @SerializedName("images")
     private List<Image> mRoomImages;
 
     public Room() {

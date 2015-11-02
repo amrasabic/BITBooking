@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import amrasabic.bitcamp.ba.bitbooking.Helper;
+import amrasabic.bitcamp.ba.bitbooking.extras.Helper;
 import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 

@@ -18,7 +18,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import amrasabic.bitcamp.ba.bitbooking.R;
+import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 import amrasabic.bitcamp.ba.bitbooking.model.Room;
+import retrofit.RestAdapter;
 
 public class RoomFragment extends Fragment {
 
@@ -30,16 +32,21 @@ public class RoomFragment extends Fragment {
     private String images;
     private Button mButton;
 
+    private RestAdapter adapter;
+    private BitBookingApi api;
+
     // newInstance constructor for creating fragment with arguments
     public static RoomFragment newInstance(int page, Room room) {
         RoomFragment fragmentFirst = new RoomFragment();
         Bundle args = new Bundle();
-        args.putInt("id", room.getRoomId());
+        args.putInt("mRoomId", room.getRoomId());
         args.putInt("mNumberOfBeds", room.getNumberOfBeds());
-        args.putInt("mRoomType", room.getRoomType());
+//        args.putInt("mRoomType", room.getRoomType());
         args.putString("mRoomName", room.getRoomName());
         args.putString("mDescription", room.getDescription());
-        args.putString("images", room.getRoomImages().get(0).getThumbnail());
+
+
+//        args.putString("images", room.getRoomImages().get(0).getThumbnail());
         fragmentFirst.setArguments(args);
         return fragmentFirst;
 
@@ -52,8 +59,8 @@ public class RoomFragment extends Fragment {
         mRoomName = getArguments().getString("mRoomName");
         mDescription = getArguments().getString("mDescription");
         mNumberOfBeds = getArguments().getInt("mNumberOfBeds", 0);
-        mRoomType = getArguments().getInt("mRoomType", 0);
-        images = getArguments().getString("images");
+//        mRoomType = getArguments().getInt("mRoomType", 0);
+        mRoomId = getArguments().getInt("mRoomId");
     }
 
     // Inflate the view for the fragment based on layout XML
@@ -71,31 +78,30 @@ public class RoomFragment extends Fragment {
         TextView numberOfBeds = (TextView) view.findViewById(R.id.number_of_beds);
         numberOfBeds.setText(Integer.toString(mNumberOfBeds));
 
-        TextView roomType = (TextView) view.findViewById(R.id.room_type);
-        roomType.setText(Integer.toString(mRoomType));
 
         Button reservation = (Button) view.findViewById(R.id.reservation);
         reservation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent("android.intent.action.RESERVATION");
+
+                Intent i = new Intent("android.intent.action.DATEPICKER");
                 i.putExtra("room_id", mRoomId);
                 startActivity(i);
             }
         });
 
-        ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-        try {
-            URL url = new URL(images);
-            InputStream is = url.openConnection().getInputStream();
-            Bitmap bm = BitmapFactory.decodeStream(is);
-            imageView.setImageBitmap(bm);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+//        ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
+//        try {
+//            URL url = new URL(images);
+//            InputStream is = url.openConnection().getInputStream();
+//            Bitmap bm = BitmapFactory.decodeStream(is);
+//            imageView.setImageBitmap(bm);
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
         return view;
     }
 }

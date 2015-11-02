@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="draglistview-1.1.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.woxthebox/draglistview/1.1.4/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.woxthebox/draglistview/1.1.4/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.woxthebox/draglistview/1.1.4/8b6d8997bf309dc8a5fffa13ff05bbac0d41ad2d/draglistview-1.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

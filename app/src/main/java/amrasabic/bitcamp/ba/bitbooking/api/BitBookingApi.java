@@ -14,8 +14,8 @@ import retrofit.http.Query;
 
 public interface BitBookingApi {
 
-    @POST("/user/login")
-    public void signIn(@Query("email") String email, @Query("password") String password, Callback<Response> callback);
+    @POST("/api/user/login")
+    public void signIn(@Query("email") String email, @Query("password") String password, Callback<Integer> callback);
 
     @POST("/user/register/save")
     public void signUp(@Query("email") String email, @Query("password") String password,
@@ -28,8 +28,11 @@ public interface BitBookingApi {
     @GET("/api/rooms/{id}")
     public void getHotelRooms(@Path("id") int id, Callback<List<Room>> callback);
 
-    @GET("/api/rooms/{id}")
+    @GET("/api/prices/{id}")
     public void getRoomPrices(@Path("id") int id, Callback<List<Price>> callback);
 
+    @POST("/api/hotel/room/reservation/{id}")
+    public void paypal(@Path("id") int roomId, @Query("checkIn") String checkIn, @Query("checkOut") String checkOut,
+                       @Query("userId") Integer userId, Callback<Response> callback);
 
 }

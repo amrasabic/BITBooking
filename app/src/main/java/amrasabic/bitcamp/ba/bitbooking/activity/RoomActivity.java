@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.util.List;
 
-import amrasabic.bitcamp.ba.bitbooking.Helper;
+import amrasabic.bitcamp.ba.bitbooking.extras.Helper;
 import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 import amrasabic.bitcamp.ba.bitbooking.extras.MyPagerAdapter;

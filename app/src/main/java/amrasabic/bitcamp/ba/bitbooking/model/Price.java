@@ -13,9 +13,9 @@ public class Price {
     @SerializedName("id")
     public int mRoomId;
     @SerializedName("dateFrom")
-    public Date mDateFrom;
+    public long mDateFrom;
     @SerializedName("dateTo")
-    public Date mDateTo;
+    public long mDateTo;
     @SerializedName("cost")
     public int mCost;
 
@@ -27,19 +27,19 @@ public class Price {
         return mRoomId;
     }
 
-    public Date getDateFrom() {
+    public long getDateFrom() {
         return mDateFrom;
     }
 
-    public void setDateFrom(Date dateFrom) {
+    public void setDateFrom(long dateFrom) {
         mDateFrom = dateFrom;
     }
 
-    public Date getDateTo() {
+    public long getDateTo() {
         return mDateTo;
     }
 
-    public void setDateTo(Date dateTo) {
+    public void setDateTo(long dateTo) {
         mDateTo = dateTo;
     }
 

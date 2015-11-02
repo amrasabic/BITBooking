@@ -1,59 +1,96 @@
 package amrasabic.bitcamp.ba.bitbooking.activity;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 
-import java.util.List;
-
-import amrasabic.bitcamp.ba.bitbooking.Helper;
 import amrasabic.bitcamp.ba.bitbooking.R;
-import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
-import amrasabic.bitcamp.ba.bitbooking.model.Price;
-import retrofit.Callback;
-import retrofit.RestAdapter;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
+import amrasabic.bitcamp.ba.bitbooking.extras.Helper;
 
 public class ReservationActivity extends AppCompatActivity {
 
+    private static final int DATE_PICKER_TO = 0;
+    private static final int DATE_PICKER_FROM = 1;
+
+    private int fromYear, fromMonth,fromDay, toYear, toMonth, toDay;
+
+    private int mRoomId;
     private Button mFromDate;
     private Button mToDate;
-
-    private RestAdapter adapter;
-    private BitBookingApi api;
+    private Button mBookIt;
+    private Integer mUserId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reservation);
 
+        Bundle  extras = getIntent().getExtras();
+        mRoomId = extras.getInt("room_id", 0);
+
+        SharedPreferences sh = getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
+        mUserId = sh.getInt("userId", 0);
+
         mFromDate = (Button) findViewById(R.id.from_date_button);
         mToDate = (Button) findViewById(R.id.to_date_button);
+        mBookIt = (Button) findViewById(R.id.book_it);
 
-        int id = getIntent().getExtras().getInt("room_id");
-        adapter = new RestAdapter.Builder()
-                .setEndpoint(Helper.IP_ADDRESS)
-                .build();
-
-        api = adapter.create(BitBookingApi.class);
-
-        api.getRoomPrices(id, new Callback<List<Price>>() {
+        mFromDate.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void success(List<Price> mRoomPrices, Response response2) {
-                if(mRoomPrices.size() > 0) {
-                    mFromDate.setText(mRoomPrices.get(0).getDateFrom().toString());
-                    mToDate.setText(mRoomPrices.get(0).getDateTo().toString());
-                }
-
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                int smthing = 0;
+            public void onClick(View v) {
+                showDialog(DATE_PICKER_FROM);
             }
         });
 
+        mToDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog(DATE_PICKER_TO);
+            }
+        });
 
+        mBookIt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ReservationActivity.this, PayPalActivity.class);
+                String url = Helper.IP_ADDRESS + "/api/hotel/room/reservation/" + mRoomId + "?" +
+                        "checkIn=" + mFromDate.getText() + "&" + "checkOut=" + mToDate.getText() + "&" + "userId=" + mUserId;
+                i.putExtra("url", url);
+                startActivity(i);
+            }
+        });
     }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        switch(id){
+            case DATE_PICKER_FROM:
+                return new DatePickerDialog(this, from_dateListener, fromYear, fromMonth, fromDay);
+            case DATE_PICKER_TO:
+                return new DatePickerDialog(this, to_dateListener, toYear, toMonth, toDay);
+        }
+        return null;
+    }
+
+    private DatePickerDialog.OnDateSetListener from_dateListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker arg0, int arg1, int arg2, int arg3) {
+            mFromDate.setText((arg3 + "/" + (arg2 + 1) + "/" + arg1));
+        }
+    };
+
+    private DatePickerDialog.OnDateSetListener to_dateListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker arg0, int arg1, int arg2, int arg3) {
+            mToDate.setText(arg3 + "/" + (arg2 + 1) + "/" + arg1);
+        }
+    };
 }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="amrasabic.bitcamp.ba.bitbooking"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="amrasabic.bitcamp.ba.bitbooking.activity.SignInActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="amrasabic.bitcamp.ba.bitbooking.activity.HotelActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOKING" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="amrasabic.bitcamp.ba.bitbooking.activity.SignUpActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SIGNUP" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="amrasabic.bitcamp.ba.bitbooking.activity.RoomActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.ROOMS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="amrasabic.bitcamp.ba.bitbooking.activity.ReservationActivityNo" >
+            <intent-filter>
+                <action android:name="android.intent.action.RESERVATION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="amrasabic.bitcamp.ba.bitbooking.activity.ReservationActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.DATEPICKER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="amrasabic.bitcamp.ba.bitbooking.activity.PayPalActivity" >
+        </activity>
+    </application>
+
+</manifest>
