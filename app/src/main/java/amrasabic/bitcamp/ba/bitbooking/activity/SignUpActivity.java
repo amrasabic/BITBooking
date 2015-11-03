@@ -8,8 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import amrasabic.bitcamp.ba.bitbooking.extras.Helper;
 import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
+
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
@@ -114,7 +116,7 @@ public class SignUpActivity extends AppCompatActivity {
         mPhoneNumber = (EditText) findViewById(R.id.phone_number);
 
         adapter = new RestAdapter.Builder()
-                .setEndpoint(String.valueOf("http://ip_address:9000"))
+                .setEndpoint(String.valueOf(Helper.IP_ADDRESS))
                 .build();
 
         api = adapter.create(BitBookingApi.class);

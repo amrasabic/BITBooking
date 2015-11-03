@@ -4,15 +4,17 @@ import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
 
+import java.util.List;
+
 @Parcel
 public class Hotel {
 
-    public Integer getId() {
-        return mId;
+    public Integer getHotelId() {
+        return mHotelId;
     }
 
     @SerializedName("id")
-    private Integer mId;
+    private Integer mHotelId;
 
     @SerializedName("name")
     private String mHotelName;
@@ -32,6 +34,8 @@ public class Hotel {
     @SerializedName("description")
     private String mDescription;
 
+    @SerializedName("images")
+    private List<Image> mRoomImages;
 
     public Hotel() {
 
@@ -50,4 +54,26 @@ public class Hotel {
         return mHotelName;
     }
 
+    public String getAddress() {
+        return mAddress;
+    }
+
+    public String getCity() {
+        return mCity;
+    }
+
+    public String getCountry() {
+        return mCountry;
+    }
+
+    public String getDescription() {
+        return mDescription;
+    }
+
+    public Image getHotelImage() {
+        if(mRoomImages.size() > 0) {
+            return mRoomImages.get(0);
+        }
+        return null;
+    }
 }

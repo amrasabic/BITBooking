@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_layout"
+    android:layout_width="173dp"
+    android:layout_height="226dp"
+    android:layout_margin="7dp"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="115dp"
+        android:id="@+id/hotel_image"
+        android:layout_gravity="top"
+        android:src="@drawable/hotel"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/imageView2"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/star"
+        android:layout_marginTop="-20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:id="@+id/rating"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:layout_marginTop="-29dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bristol"
+        android:id="@+id/hotel_name"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Default Address"
+        android:id="@+id/textView3"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:textSize="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VIEW  HOTEL"
+        android:id="@+id/textView4"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textSize="12dp"/>
+</LinearLayout><!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/src/main/res/layout/hotel_fragment.xml -->
