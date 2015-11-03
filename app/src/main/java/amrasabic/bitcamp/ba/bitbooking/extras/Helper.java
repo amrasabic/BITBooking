@@ -3,6 +3,6 @@ package amrasabic.bitcamp.ba.bitbooking.extras;
 
 public class Helper {
 
-    public static final String IP_ADDRESS = "http://192.168.0.100:9000";
+    public static final String IP_ADDRESS = "http://10.202.22.192:9000";
 
 }

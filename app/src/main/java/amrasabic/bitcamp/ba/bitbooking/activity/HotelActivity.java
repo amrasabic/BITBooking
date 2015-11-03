@@ -7,6 +7,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.woxthebox.draglistview.DragItemAdapter;
@@ -17,6 +18,7 @@ import java.util.List;
 import amrasabic.bitcamp.ba.bitbooking.extras.Helper;
 import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
+import amrasabic.bitcamp.ba.bitbooking.extras.LoadImage;
 import amrasabic.bitcamp.ba.bitbooking.model.Hotel;
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -86,6 +88,9 @@ public class HotelActivity extends Activity {
             holder.hotelName.setText(mItemList.get(position).getHotelName());
             holder.rating.setText(Integer.toString(mItemList.get(position).getRating()));
             holder.itemView.setTag(mItemList.get(position).getHotelId());
+            if(mItemList.get(position).getHotelImage() != null) {
+                new LoadImage(holder.hotelImage).execute(mItemList.get(position).getHotelImage().getImageUrl());
+            }
         }
 
         @Override
@@ -97,12 +102,14 @@ public class HotelActivity extends Activity {
 
             public TextView rating;
             public TextView hotelName;
+            public ImageView hotelImage;
 
             public ViewHolder(final View itemView) {
                 super(itemView, mGrabHandleId);
                 itemView.setLongClickable(false);
                 rating = (TextView) itemView.findViewById(R.id.rating);
                 hotelName = (TextView) itemView.findViewById(R.id.hotel_name);
+                hotelImage = (ImageView) itemView.findViewById(R.id.hotel_image);
             }
 
             @Override

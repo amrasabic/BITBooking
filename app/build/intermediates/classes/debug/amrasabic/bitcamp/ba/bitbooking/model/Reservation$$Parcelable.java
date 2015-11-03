@@ -6,7 +6,7 @@ import android.os.Parcelable.Creator;
 import org.parceler.Generated;
 import org.parceler.ParcelWrapper;
 
-@Generated(value = "org.parceler.ParcelAnnotationProcessor", date = "2015-11-02T00:16+0100")
+@Generated(value = "org.parceler.ParcelAnnotationProcessor", date = "2015-11-03T23:42+0100")
 public class Reservation$$Parcelable
     implements Parcelable, ParcelWrapper<amrasabic.bitcamp.ba.bitbooking.model.Reservation>
 {
@@ -15,7 +15,7 @@ public class Reservation$$Parcelable
     @SuppressWarnings("UnusedDeclaration")
     public final static Reservation$$Parcelable.Creator$$4 CREATOR = new Reservation$$Parcelable.Creator$$4();
 
-    public Reservation$$Parcelable(android.os.Parcel parcel$$16) {
+    public Reservation$$Parcelable(android.os.Parcel parcel$$18) {
         reservation$$0 = new amrasabic.bitcamp.ba.bitbooking.model.Reservation();
     }
 
@@ -24,7 +24,7 @@ public class Reservation$$Parcelable
     }
 
     @Override
-    public void writeToParcel(android.os.Parcel parcel$$17, int flags) {
+    public void writeToParcel(android.os.Parcel parcel$$19, int flags) {
     }
 
     @Override
@@ -43,8 +43,8 @@ public class Reservation$$Parcelable
 
 
         @Override
-        public Reservation$$Parcelable createFromParcel(android.os.Parcel parcel$$18) {
-            return new Reservation$$Parcelable(parcel$$18);
+        public Reservation$$Parcelable createFromParcel(android.os.Parcel parcel$$20) {
+            return new Reservation$$Parcelable(parcel$$20);
         }
 
         @Override

@@ -27,7 +27,6 @@ public class Room {
     @SerializedName("prices")
     private List<Price> mRoomPrices;
 
-
     @SerializedName("images")
     private List<Image> mRoomImages;
 
@@ -82,7 +81,11 @@ public class Room {
         return mRoomPrices;
     }
 
-    public List<Image> getRoomImages() {
-        return mRoomImages;
+    public Image getRoomImage() {
+        if(mRoomImages.size() > 0) {
+            return mRoomImages.get(0);
+        }
+        return null;
     }
+
 }

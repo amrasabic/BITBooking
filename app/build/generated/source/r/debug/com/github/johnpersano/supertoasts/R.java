@@ -63,12 +63,12 @@ public final class R {
 		public static final int shape_undobarselected = 0x7f02006a;
 	}
 	public static final class id {
-		public static final int button = 0x7f0c007d;
+		public static final int button = 0x7f0c007e;
 		public static final int card_container = 0x7f0c004e;
-		public static final int divider = 0x7f0c007c;
-		public static final int message_textview = 0x7f0c007b;
-		public static final int progress_bar = 0x7f0c007e;
-		public static final int root_layout = 0x7f0c007a;
+		public static final int divider = 0x7f0c007d;
+		public static final int message_textview = 0x7f0c007c;
+		public static final int progress_bar = 0x7f0c007f;
+		public static final int root_layout = 0x7f0c007b;
 	}
 	public static final class layout {
 		public static final int dummy_layout = 0x7f040019;

@@ -28,12 +28,8 @@ public class RoomFragment extends Fragment {
     private String mRoomName;
     private String mDescription;
     private int mNumberOfBeds;
-    private int mRoomType;
-    private String images;
-    private Button mButton;
+    private String mImage;
 
-    private RestAdapter adapter;
-    private BitBookingApi api;
 
     // newInstance constructor for creating fragment with arguments
     public static RoomFragment newInstance(int page, Room room) {
@@ -45,8 +41,10 @@ public class RoomFragment extends Fragment {
         args.putString("mRoomName", room.getRoomName());
         args.putString("mDescription", room.getDescription());
 
+        if(room.getRoomImage() != null ) {
+            args.putString("mImage", room.getRoomImage().getImageUrl());
+        }
 
-//        args.putString("images", room.getRoomImages().get(0).getThumbnail());
         fragmentFirst.setArguments(args);
         return fragmentFirst;
 
@@ -60,6 +58,7 @@ public class RoomFragment extends Fragment {
         mDescription = getArguments().getString("mDescription");
         mNumberOfBeds = getArguments().getInt("mNumberOfBeds", 0);
 //        mRoomType = getArguments().getInt("mRoomType", 0);
+        mImage = getArguments().getString("mImage");
         mRoomId = getArguments().getInt("mRoomId");
     }
 
@@ -90,18 +89,12 @@ public class RoomFragment extends Fragment {
             }
         });
 
-//        ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-//        try {
-//            URL url = new URL(images);
-//            InputStream is = url.openConnection().getInputStream();
-//            Bitmap bm = BitmapFactory.decodeStream(is);
-//            imageView.setImageBitmap(bm);
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
+        ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
+
+        if (mImage != null) {
+            new LoadImage(imageView).execute(mImage);
+        }
+
         return view;
     }
 }

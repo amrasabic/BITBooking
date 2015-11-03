@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
 
+import java.util.List;
+
 @Parcel
 public class Hotel {
 
@@ -32,6 +34,8 @@ public class Hotel {
     @SerializedName("description")
     private String mDescription;
 
+    @SerializedName("images")
+    private List<Image> mRoomImages;
 
     public Hotel() {
 
@@ -64,5 +68,12 @@ public class Hotel {
 
     public String getDescription() {
         return mDescription;
+    }
+
+    public Image getHotelImage() {
+        if(mRoomImages.size() > 0) {
+            return mRoomImages.get(0);
+        }
+        return null;
     }
 }

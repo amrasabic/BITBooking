@@ -12,8 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 
+import com.google.gson.Gson;
+
 import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.extras.Helper;
+import amrasabic.bitcamp.ba.bitbooking.model.User;
 
 public class ReservationActivity extends AppCompatActivity {
 
@@ -37,6 +40,10 @@ public class ReservationActivity extends AppCompatActivity {
         mRoomId = extras.getInt("room_id", 0);
 
         SharedPreferences sh = getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
+//        Gson gson = new Gson();
+//        String json = sh.getString("User", "");
+//        User user = gson.fromJson(json, User.class);
+
         mUserId = sh.getInt("userId", 0);
 
         mFromDate = (Button) findViewById(R.id.from_date_button);

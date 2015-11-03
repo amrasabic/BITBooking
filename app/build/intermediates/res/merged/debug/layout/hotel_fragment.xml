@@ -12,7 +12,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="115dp"
-        android:id="@+id/imageView"
+        android:id="@+id/hotel_image"
         android:layout_gravity="top"
         android:src="@drawable/hotel"
         android:scaleType="fitXY"/>

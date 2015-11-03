@@ -6,7 +6,7 @@ import android.os.Parcelable.Creator;
 import org.parceler.Generated;
 import org.parceler.ParcelWrapper;
 
-@Generated(value = "org.parceler.ParcelAnnotationProcessor", date = "2015-11-02T00:16+0100")
+@Generated(value = "org.parceler.ParcelAnnotationProcessor", date = "2015-11-03T23:42+0100")
 public class Price$$Parcelable
     implements Parcelable, ParcelWrapper<amrasabic.bitcamp.ba.bitbooking.model.Price>
 {
@@ -15,12 +15,12 @@ public class Price$$Parcelable
     @SuppressWarnings("UnusedDeclaration")
     public final static Price$$Parcelable.Creator$$2 CREATOR = new Price$$Parcelable.Creator$$2();
 
-    public Price$$Parcelable(android.os.Parcel parcel$$10) {
+    public Price$$Parcelable(android.os.Parcel parcel$$12) {
         price$$4 = new amrasabic.bitcamp.ba.bitbooking.model.Price();
-        price$$4 .mRoomId = parcel$$10 .readInt();
-        price$$4 .mDateFrom = parcel$$10 .readLong();
-        price$$4 .mCost = parcel$$10 .readInt();
-        price$$4 .mDateTo = parcel$$10 .readLong();
+        price$$4 .mRoomId = parcel$$12 .readInt();
+        price$$4 .mDateFrom = parcel$$12 .readLong();
+        price$$4 .mCost = parcel$$12 .readInt();
+        price$$4 .mDateTo = parcel$$12 .readLong();
     }
 
     public Price$$Parcelable(amrasabic.bitcamp.ba.bitbooking.model.Price price$$5) {
@@ -28,11 +28,11 @@ public class Price$$Parcelable
     }
 
     @Override
-    public void writeToParcel(android.os.Parcel parcel$$11, int flags) {
-        parcel$$11 .writeInt(price$$4 .mRoomId);
-        parcel$$11 .writeLong(price$$4 .mDateFrom);
-        parcel$$11 .writeInt(price$$4 .mCost);
-        parcel$$11 .writeLong(price$$4 .mDateTo);
+    public void writeToParcel(android.os.Parcel parcel$$13, int flags) {
+        parcel$$13 .writeInt(price$$4 .mRoomId);
+        parcel$$13 .writeLong(price$$4 .mDateFrom);
+        parcel$$13 .writeInt(price$$4 .mCost);
+        parcel$$13 .writeLong(price$$4 .mDateTo);
     }
 
     @Override
@@ -51,8 +51,8 @@ public class Price$$Parcelable
 
 
         @Override
-        public Price$$Parcelable createFromParcel(android.os.Parcel parcel$$12) {
-            return new Price$$Parcelable(parcel$$12);
+        public Price$$Parcelable createFromParcel(android.os.Parcel parcel$$14) {
+            return new Price$$Parcelable(parcel$$14);
         }
 
         @Override

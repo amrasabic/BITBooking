@@ -35,7 +35,7 @@
             android:textStyle="bold"
             android:text="To date "/>
 
-        <Button android:id="@+id/to_date_button"
+        <Button android:id="@+id/from_date_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -51,7 +51,7 @@
             android:textStyle="bold"
             android:text="From date"/>
 
-        <Button android:id="@+id/from_date_button"
+        <Button android:id="@+id/to_date_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
