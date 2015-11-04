@@ -8,7 +8,7 @@ import org.parceler.Generated;
 import org.parceler.InjectionUtil;
 import org.parceler.ParcelWrapper;
 
-@Generated(value = "org.parceler.ParcelAnnotationProcessor", date = "2015-11-03T23:42+0100")
+@Generated(value = "org.parceler.ParcelAnnotationProcessor", date = "2015-11-04T02:15+0100")
 public class Hotel$$Parcelable
     implements Parcelable, ParcelWrapper<amrasabic.bitcamp.ba.bitbooking.model.Hotel>
 {
