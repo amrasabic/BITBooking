@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/card_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#15000000"
+        android:orientation="vertical"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="THE MOST VISITED HOTELS"
+        android:id="@+id/textView"
+        android:layout_margin="20dp"
+        android:textSize="22dp"/>
+
+    <com.woxthebox.draglistview.DragListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/hotels_list">
+
+    </com.woxthebox.draglistview.DragListView>
+
+</LinearLayout>
+<!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/src/main/res/layout/hotel_list.xml -->

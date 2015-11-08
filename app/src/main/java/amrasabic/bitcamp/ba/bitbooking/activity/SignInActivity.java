@@ -1,47 +1,31 @@
 package amrasabic.bitcamp.ba.bitbooking.activity;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.github.johnpersano.supertoasts.SuperCardToast;
-import com.github.johnpersano.supertoasts.SuperToast;
-
-import java.util.ArrayList;
-
+import amrasabic.bitcamp.ba.bitbooking.extras.Helper;
 import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
-import amrasabic.bitcamp.ba.bitbooking.model.User;
 
-import retrofit.RestAdapter;
 import retrofit.Callback;
+import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-public class SignInActivity extends Activity {
+public class SignInActivity extends AppCompatActivity {
 
     private EditText mEmail, mPassword;
     private Button mSignIn, mSignUp;
     private RestAdapter adapter;
     private BitBookingApi api;
-
-    private static ArrayList<User> mUsers;
-
-    static {
-        mUsers = new ArrayList<>();
-
-        mUsers.add(new User("amra@bitcamp.ba", "amra1234"));
-        mUsers.add(new User("ajla@bitcamp.ba", "ajla1234"));
-        mUsers.add(new User("edvin@bitcamp.ba", "edvin1234"));
-        mUsers.add(new User("boris@bitcamp.ba", "boris1234"));
-        mUsers.add(new User("alen@bitcamp.ba", "alen1234"));
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +36,7 @@ public class SignInActivity extends Activity {
         mPassword = (EditText) findViewById(R.id.password);
 
         adapter = new RestAdapter.Builder()
-                .setEndpoint("http://ip_address:9000")
+                .setEndpoint(Helper.IP_ADDRESS)
                 .build();
 
         api = adapter.create(BitBookingApi.class);
@@ -62,29 +46,18 @@ public class SignInActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                // this is temporary - can log in without any fields filled
-//                for(int i = 0; i < mUsers.size(); i++){
-//                    if(mUsers.get(i).getEmail().equals(mEmail.getText().toString()) && mUsers.get(i).getPassword().equals(mPassword.getText().toString())) {
-//                            Intent main = new Intent("android.intent.action.BOOKING");
-//                            startActivity(main);
-//                            break;
-//
-//                    }
-//
-//                    if (i == mUsers.size() - 1){
-//                        Toast.makeText(SignInActivity.this, "Incorrect email or password! Try again.", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-
-//               finish();
-
-                api.signIn(String.valueOf(mEmail.getText()), String.valueOf(mPassword.getText()), new Callback<Response>() {
+                api.signIn(String.valueOf(mEmail.getText()), String.valueOf(mPassword.getText()), new Callback<Integer>() {
                     @Override
-                    public void success(Response response, Response response2) {
-                        // if user successfully logs in opens list of hotels
+                    public void success(Integer response, Response response2) {
+
+                        SharedPreferences sharedPref = getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.putInt("userId", response);
+                        editor.commit();
+
                         Intent main = new Intent("android.intent.action.BOOKING");
                         startActivity(main);
-//                        finish();
+                        finish();
                     }
 
                     @Override

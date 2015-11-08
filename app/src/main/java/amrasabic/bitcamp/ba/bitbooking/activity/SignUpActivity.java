@@ -1,22 +1,24 @@
 package amrasabic.bitcamp.ba.bitbooking.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import amrasabic.bitcamp.ba.bitbooking.extras.Helper;
 import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
+
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 
 import org.apache.commons.validator.routines.EmailValidator;
 
-public class SignUpActivity extends Activity {
+public class SignUpActivity extends AppCompatActivity {
 
     private EditText mEmail, mPassword, mConfirmPasword, mFirstName, mLastName, mPhoneNumber;
     private Button mSignUp;
@@ -114,7 +116,7 @@ public class SignUpActivity extends Activity {
         mPhoneNumber = (EditText) findViewById(R.id.phone_number);
 
         adapter = new RestAdapter.Builder()
-                .setEndpoint(String.valueOf("http://ip_address:9000"))
+                .setEndpoint(String.valueOf(Helper.IP_ADDRESS))
                 .build();
 
         api = adapter.create(BitBookingApi.class);
@@ -163,5 +165,4 @@ public class SignUpActivity extends Activity {
             }
         });
     }
-
 }
