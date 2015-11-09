@@ -12,6 +12,17 @@ import retrofit.http.POST;
 import retrofit.http.Path;
 import retrofit.http.Query;
 
+/**
+ * This interface is used to connect with REST service.
+ * Annotations @POST, @GET defines http request type, and forwarded
+ * String is route from which data should be requested.
+ *
+ * Annotation @Query requires form id from which data should be collected.
+ * Annotation @Path is used for dynamic routes, which contains, for example ../room/1
+ *
+ * And Callback response is response from API, when implementing these methods
+ * it needs to be defined what to do on success and on failure response from API.
+ */
 public interface BitBookingApi {
 
     @POST("/api/user/login")
