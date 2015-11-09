@@ -63,4 +63,4 @@
         android:text="BOOK IT"
         android:id="@+id/reservation"
         android:layout_gravity="center_horizontal"/>
-</LinearLayout><!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/src/main/res/layout/room_fragment.xml -->
+</LinearLayout><!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/src/main/res/layout/room_fragment.xml -->

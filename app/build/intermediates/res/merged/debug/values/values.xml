@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -23,10 +23,10 @@
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <item name="black" type="color">#000</item>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
@@ -36,7 +36,7 @@
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="colorAccent">#337ab7</color>
     <color name="colorPrimary">#337ab7</color>
@@ -44,10 +44,10 @@
     <item name="dark2Color" type="color">#252525</item>
     <item name="darkColor" type="color">#353535</item>
     <item name="darkColorPressed" type="color">#3d3d3d</item>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.github.johnpersano/supertoasts/1.3.4/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.github.johnpersano/supertoasts/1.3.4/res/values/values.xml -->
     <eat-comment/>
     <color name="dark_gray">#333333</color>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
@@ -59,17 +59,17 @@
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
     <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <item name="lightBlue" type="color">#00B8F5</item>
     <item name="lightBluePressed" type="color">#0c7e8f</item>
     <item name="lightColor" type="color">#ededed</item>
     <item name="lightGray" type="color">#EEEEEE</item>
     <item name="lightGrayOne" type="color">#6a6a6a</item>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.github.johnpersano/supertoasts/1.3.4/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.github.johnpersano/supertoasts/1.3.4/res/values/values.xml -->
     <eat-comment/>
     <color name="light_gray">#AFFFFFFF</color>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
@@ -87,19 +87,19 @@
     <color name="primary_dark_material_light">@color/material_grey_600</color>
     <color name="primary_material_dark">@color/material_grey_900</color>
     <color name="primary_material_light">@color/material_grey_100</color>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="primary_material_light_1">#9c27b0</color>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <color name="primary_text_default_material_dark">#ffffffff</color>
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <item name="red" type="color">#ff8e8e</item>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <color name="ripple_material_dark">#42ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
@@ -111,7 +111,7 @@
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <item name="tipColor" type="color">#fee49f</item>
     <item name="topStoriesColor" type="color">#6fcefa</item>
@@ -145,7 +145,7 @@
     <declare-styleable name="View"><attr format="dimension" name="paddingStart"/><attr format="dimension" name="paddingEnd"/><attr name="android:focusable"/><attr format="reference" name="theme"/><attr name="android:theme"/></declare-styleable>
     <declare-styleable name="ViewBackgroundHelper"><attr name="android:background"/><attr format="color" name="backgroundTint"/><attr name="backgroundTintMode"><enum name="src_over" value="3"/><enum name="src_in" value="5"/><enum name="src_atop" value="9"/><enum name="multiply" value="14"/><enum name="screen" value="15"/></attr></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -207,16 +207,16 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.github.johnpersano/supertoasts/1.3.4/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.github.johnpersano/supertoasts/1.3.4/res/values/values.xml -->
     <eat-comment/>
     <dimen name="buttontoast_hover">24dp</dimen>
     <dimen name="buttontoast_x_padding">12dp</dimen>
     <dimen name="cardtoast_margin">4dp</dimen>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
@@ -227,36 +227,36 @@
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_subtext_size">12dp</dimen>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.github.johnpersano/supertoasts/1.3.4/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.github.johnpersano/supertoasts/1.3.4/res/values/values.xml -->
     <eat-comment/>
     <dimen name="toast_hover">64dp</dimen>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <drawable name="semitransparent_black">#77000000</drawable>
     <drawable name="semitransparent_white">#77ffffff</drawable>
     <drawable name="transparent">#00ffffff</drawable>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
     <item name="home" type="id"/>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <item name="item_touch_helper_previous_elevation" type="id"/>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
@@ -284,7 +284,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">BITBooking</string>
     <string name="confirm_password">Confirm password</string>
@@ -301,14 +301,14 @@
     <string name="sign_in">Sign in</string>
     <string name="sign_up">Sign up</string>
     <string name="sign_up_toast">Check email and activate account.</string>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -316,7 +316,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
@@ -1231,7 +1231,7 @@
         <item name="android:minWidth">56dp</item>
         <item name="android:scaleType">center</item>
     </style>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.github.johnpersano/supertoasts/1.3.4/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.github.johnpersano/supertoasts/1.3.4/res/values/values.xml -->
     <eat-comment/>
     <style name="DefaultRootLayout">
         <item name="android:background">@drawable/background_standard_gray</item>
@@ -1246,7 +1246,7 @@
         <item name="android:paddingLeft">16dp</item>
         <item name="android:paddingRight">16dp</item>
     </style>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>
@@ -1388,7 +1388,7 @@
     <style name="RtlOverlay.Widget.AppCompat.SearchView.MagIcon" parent="android:Widget">
         <item name="android:layout_marginLeft">@dimen/abc_dropdownitem_text_padding_left</item>
     </style>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.github.johnpersano/supertoasts/1.3.4/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.github.johnpersano/supertoasts/1.3.4/res/values/values.xml -->
     <eat-comment/>
     <style name="SuperActivityToast_Button_Button">
         <item name="android:background">@drawable/selector_undobutton</item>
@@ -1434,7 +1434,7 @@
     <style name="SuperCardToast_Button_RootLayout" parent="DefaultRootLayout">
         <item name="android:background">@drawable/selector_undobutton</item>
     </style>
-    <!-- From: file:/home/stvorenje/Documents/BothApps/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
+    <!-- From: file:/Users/amra.sabic/AndroidStudioProjects/BITBooking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>

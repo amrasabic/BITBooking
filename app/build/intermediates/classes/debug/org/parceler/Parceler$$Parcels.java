@@ -14,7 +14,7 @@ import amrasabic.bitcamp.ba.bitbooking.model.Reservation$$Parcelable;
 import amrasabic.bitcamp.ba.bitbooking.model.Room;
 import amrasabic.bitcamp.ba.bitbooking.model.Room$$Parcelable;
 
-@Generated(value = "org.parceler.ParcelAnnotationProcessor", date = "2015-11-04T02:15+0100")
+@Generated(value = "org.parceler.ParcelAnnotationProcessor", date = "2015-11-09T14:49+0100")
 public class Parceler$$Parcels
     implements Repository<org.parceler.Parcels.ParcelableFactory>
 {
@@ -22,11 +22,11 @@ public class Parceler$$Parcels
     private final Map<Class, org.parceler.Parcels.ParcelableFactory> map$$0 = new HashMap<Class, org.parceler.Parcels.ParcelableFactory>();
 
     public Parceler$$Parcels() {
-        map$$0 .put(Room.class, new Parceler$$Parcels.Room$$Parcelable$$0());
-        map$$0 .put(Image.class, new Parceler$$Parcels.Image$$Parcelable$$0());
         map$$0 .put(Reservation.class, new Parceler$$Parcels.Reservation$$Parcelable$$0());
-        map$$0 .put(Price.class, new Parceler$$Parcels.Price$$Parcelable$$0());
         map$$0 .put(Hotel.class, new Parceler$$Parcels.Hotel$$Parcelable$$0());
+        map$$0 .put(Image.class, new Parceler$$Parcels.Image$$Parcelable$$0());
+        map$$0 .put(Room.class, new Parceler$$Parcels.Room$$Parcelable$$0());
+        map$$0 .put(Price.class, new Parceler$$Parcels.Price$$Parcelable$$0());
     }
 
     public Map<Class, org.parceler.Parcels.ParcelableFactory> get() {
