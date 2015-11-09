@@ -11,6 +11,7 @@ import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 import amrasabic.bitcamp.ba.bitbooking.extras.MyPagerAdapter;
 import amrasabic.bitcamp.ba.bitbooking.model.Room;
+
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;

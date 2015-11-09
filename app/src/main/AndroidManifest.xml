@@ -38,13 +38,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ReservationActivityNo" >
-            <intent-filter>
-                <action android:name="android.intent.action.RESERVATION" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity android:name=".activity.ReservationActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.DATEPICKER" />

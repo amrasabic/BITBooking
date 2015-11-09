@@ -89,7 +89,8 @@ public class SignUpActivity extends AppCompatActivity {
     /**
      * Validates does the param String number contains only digits and is number length in range 12-15.
      *
-     * @return boolean value true if number is valid and number length in range 12-15, else returns false and returns false for empty String
+     * @return - boolean value true if number is valid and number length in range 12-15,
+     *          else returns false and returns false for empty String
      */
     private boolean validateForOnlyDigits(String number) {
         if (number.equals("")) {

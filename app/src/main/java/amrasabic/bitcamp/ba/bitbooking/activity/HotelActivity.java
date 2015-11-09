@@ -20,6 +20,7 @@ import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 import amrasabic.bitcamp.ba.bitbooking.extras.LoadImage;
 import amrasabic.bitcamp.ba.bitbooking.model.Hotel;
+
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
