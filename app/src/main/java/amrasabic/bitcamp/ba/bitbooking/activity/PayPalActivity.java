@@ -7,6 +7,9 @@ import android.webkit.WebViewClient;
 
 import amrasabic.bitcamp.ba.bitbooking.R;
 
+/**
+ *
+ */
 public class PayPalActivity extends AppCompatActivity {
 
     @Override

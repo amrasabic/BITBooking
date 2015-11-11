@@ -1,7 +1,9 @@
 package amrasabic.bitcamp.ba.bitbooking.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.LayoutInflater;
@@ -15,31 +17,56 @@ import com.woxthebox.draglistview.DragListView;
 
 import java.util.List;
 
-import amrasabic.bitcamp.ba.bitbooking.extras.Helper;
+import amrasabic.bitcamp.ba.bitbooking.helpers.Helper;
 import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 import amrasabic.bitcamp.ba.bitbooking.extras.LoadImage;
 import amrasabic.bitcamp.ba.bitbooking.model.Hotel;
 
 import retrofit.Callback;
+import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
+/**
+ * This class handles Hotel list shown as grid layout
+ */
 public class HotelActivity extends Activity {
+
+    // Declaration of parameters
 
     private RestAdapter adapter;
     private BitBookingApi api;
+
+    private Integer mUserToken;
     private HotelsAdapter mHotelsAdapter;
     private DragListView mHotelsList;
 
+    /**
+     * On create method
+     * handles
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hotel_list);
+        // TODO modify - store token from header
+        SharedPreferences sh = getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
+        // TODO dont pass ID - store and send token in header
+        mUserToken = sh.getInt("userId", 0);
+
+        RequestInterceptor requestInterceptor = new RequestInterceptor() {
+            @Override
+            public void intercept(RequestInterceptor.RequestFacade request) {
+                request.addHeader("User-Token", Integer.toString(mUserToken));
+            }
+        };
 
         adapter = new RestAdapter.Builder()
                 .setEndpoint(Helper.IP_ADDRESS)
+                .setRequestInterceptor(requestInterceptor)
                         .build();
 
         api = adapter.create(BitBookingApi.class);
@@ -49,20 +76,21 @@ public class HotelActivity extends Activity {
             public void success(List<Hotel> response, Response response2) {
 
                 mHotelsAdapter = new HotelsAdapter(response, R.layout.hotel_fragment, R.id.item_layout, true);
+                // find view component by id
                 mHotelsList = (DragListView) findViewById(R.id.hotels_list);
                 mHotelsList.setLayoutManager(new GridLayoutManager(getApplication(), 2));
+                // set hotel adapter with list of hotels on hotel list view
                 mHotelsList.setAdapter(mHotelsAdapter, true);
             }
 
             @Override
             public void failure(RetrofitError error) {
-                // TODO: 10/21/15
-                int a = 0;
+                // TODO
             }
         });
 
     }
-
+    
     public class HotelsAdapter extends DragItemAdapter<Hotel, HotelsAdapter.ViewHolder> {
 
         private int mLayoutId;
@@ -74,7 +102,6 @@ public class HotelActivity extends Activity {
             mGrabHandleId = grabHandleId;
             setHasStableIds(true);
             setItemList(list);
-
         }
 
         @Override

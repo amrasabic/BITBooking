@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.util.List;
 
-import amrasabic.bitcamp.ba.bitbooking.extras.Helper;
+import amrasabic.bitcamp.ba.bitbooking.helpers.Helper;
 import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 import amrasabic.bitcamp.ba.bitbooking.extras.MyPagerAdapter;
@@ -17,35 +17,50 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
+/**
+ * This class handles Room activity, contains room information.
+ */
 public class RoomActivity extends AppCompatActivity {
+
+    // Declaration of parameters
 
     private RestAdapter adapter;
     private BitBookingApi api;
 
+    /**
+     * On create method
+     * handles room list and creates fragment container for each room.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.room_list);
 
+        // getting Hotel id from intent extra
         int id = getIntent().getExtras().getInt("id");
+
         adapter = new RestAdapter.Builder()
                 .setEndpoint(Helper.IP_ADDRESS)
                 .build();
 
         api = adapter.create(BitBookingApi.class);
 
+        // get hotel room list from REST service
         api.getHotelRooms(id, new Callback<List<Room>>() {
             @Override
             public void success(List<Room> mRooms, Response response2) {
-                int s = mRooms.size();
+                // find view pager component by id
                 ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
+                // forward room list to MyPagerAdapter
                 MyPagerAdapter adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(), mRooms);
+                // and set that adapter to pager component above
                 vpPager.setAdapter(adapterViewPager);
             }
 
             @Override
             public void failure(RetrofitError error) {
-                int smthing = 0;
+                // TODO
             }
         });
 

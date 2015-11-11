@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import amrasabic.bitcamp.ba.bitbooking.extras.Helper;
+import amrasabic.bitcamp.ba.bitbooking.helpers.Helper;
 import amrasabic.bitcamp.ba.bitbooking.R;
 import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 
@@ -22,18 +22,24 @@ import retrofit.client.Response;
 
 public class SignInActivity extends AppCompatActivity {
 
-    private EditText mEmail, mPassword;
-    private Button mSignIn, mSignUp;
+    // Declaration of parameters
+
     private RestAdapter adapter;
     private BitBookingApi api;
 
+    private EditText mEmail, mPassword;
+    private Button mSignIn, mSignUp;
+
+    /**
+     * On create method
+     * handles sign in activity, collects data from fields,
+     * send to REST service and on success response opens Hotel activity
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_in);
-
-        mEmail = (EditText) findViewById(R.id.username);
-        mPassword = (EditText) findViewById(R.id.password);
 
         adapter = new RestAdapter.Builder()
                 .setEndpoint(Helper.IP_ADDRESS)
@@ -41,7 +47,14 @@ public class SignInActivity extends AppCompatActivity {
 
         api = adapter.create(BitBookingApi.class);
 
+        // find view components by id
+        mEmail = (EditText) findViewById(R.id.username);
+        mPassword = (EditText) findViewById(R.id.password);
+
         mSignIn = (Button) findViewById(R.id.sign_in);
+        mSignUp = (Button) findViewById(R.id.go_to_sign_up);
+
+        // set on click mSignIn button listener
         mSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,9 +65,10 @@ public class SignInActivity extends AppCompatActivity {
 
                         SharedPreferences sharedPref = getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPref.edit();
+                        // TODO take token from header
                         editor.putInt("userId", response);
                         editor.commit();
-
+                        // On success response open Hotel activity
                         Intent main = new Intent("android.intent.action.BOOKING");
                         startActivity(main);
                         finish();
@@ -62,17 +76,17 @@ public class SignInActivity extends AppCompatActivity {
 
                     @Override
                     public void failure(RetrofitError error) {
-                        // if user log in fails make Toast
                         Toast.makeText(SignInActivity.this, "Incorrect email or password! Try again.", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
         });
 
-        mSignUp = (Button) findViewById(R.id.go_to_sign_up);
+        // set on click mSignUp button listener
         mSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Open SignIn activity
                 Intent main = new Intent("android.intent.action.SIGNUP");
                 startActivity(main);
             }

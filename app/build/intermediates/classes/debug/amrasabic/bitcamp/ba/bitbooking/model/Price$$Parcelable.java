@@ -6,7 +6,7 @@ import android.os.Parcelable.Creator;
 import org.parceler.Generated;
 import org.parceler.ParcelWrapper;
 
-@Generated(value = "org.parceler.ParcelAnnotationProcessor", date = "2015-11-09T20:33+0100")
+@Generated(value = "org.parceler.ParcelAnnotationProcessor", date = "2015-11-11T13:52+0100")
 public class Price$$Parcelable
     implements Parcelable, ParcelWrapper<amrasabic.bitcamp.ba.bitbooking.model.Price>
 {
