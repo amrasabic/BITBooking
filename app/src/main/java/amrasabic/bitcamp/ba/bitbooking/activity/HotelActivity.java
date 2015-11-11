@@ -90,7 +90,7 @@ public class HotelActivity extends Activity {
         });
 
     }
-    
+
     public class HotelsAdapter extends DragItemAdapter<Hotel, HotelsAdapter.ViewHolder> {
 
         private int mLayoutId;
