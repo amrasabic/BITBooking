@@ -5,10 +5,14 @@ import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
 
-import java.util.Date;
-
+/**
+ * This class represents Price model from REST service,
+ * with some attributes that are necessary in Android app.
+ */
 @Parcel
 public class Price {
+
+    // Declaration of parameters
 
     @SerializedName("id")
     public int mRoomId;
@@ -19,9 +23,14 @@ public class Price {
     @SerializedName("cost")
     public int mCost;
 
+    /**
+     * Empty constructor
+     */
     public Price() {
 
     }
+
+    // Declaration of default getters
 
     public int getId() {
         return mRoomId;
@@ -31,23 +40,12 @@ public class Price {
         return mDateFrom;
     }
 
-    public void setDateFrom(long dateFrom) {
-        mDateFrom = dateFrom;
-    }
-
     public long getDateTo() {
         return mDateTo;
-    }
-
-    public void setDateTo(long dateTo) {
-        mDateTo = dateTo;
     }
 
     public int getCost() {
         return mCost;
     }
 
-    public void setCost(int cost) {
-        mCost = cost;
-    }
 }

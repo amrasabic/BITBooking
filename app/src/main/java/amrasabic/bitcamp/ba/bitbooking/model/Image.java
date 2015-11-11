@@ -4,8 +4,15 @@ import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
 
+
+/**
+ * This class represents Image model from REST service,
+ * with some attributes that are necessary in Android app.
+ */
 @Parcel
 public class Image {
+
+    // Declaration of parameters
 
     @SerializedName("id")
     public int mImageId;
@@ -16,8 +23,14 @@ public class Image {
     @SerializedName("thumbnail")
     public String mThumbnail;
 
+    /**
+     * Empty constructor
+     */
     public Image() {
+
     }
+
+    // Declaration of default getters
 
     public int getImageId() {
         return mImageId;
@@ -27,15 +40,8 @@ public class Image {
         return mImageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
-        mImageUrl = imageUrl;
-    }
-
     public String getThumbnail() {
         return mThumbnail;
     }
 
-    public void setThumbnail(String thumbnail) {
-        mThumbnail = thumbnail;
-    }
 }

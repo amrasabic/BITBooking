@@ -1,43 +1,43 @@
 package amrasabic.bitcamp.ba.bitbooking.extras;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import amrasabic.bitcamp.ba.bitbooking.R;
-import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 import amrasabic.bitcamp.ba.bitbooking.model.Room;
-import retrofit.RestAdapter;
+
 
 public class RoomFragment extends Fragment {
 
+    // Declaration of parameters
+
     private int mRoomId;
+    private int mNumberOfBeds;
     private String mRoomName;
     private String mDescription;
-    private int mNumberOfBeds;
     private String mImage;
 
-
-    // newInstance constructor for creating fragment with arguments
+    /**
+     * Constructor newInstance for creating fragment with arguments
+     * @param page
+     * @param room
+     * @return
+     */
+    //
     public static RoomFragment newInstance(int page, Room room) {
         RoomFragment fragmentFirst = new RoomFragment();
         Bundle args = new Bundle();
         args.putInt("mRoomId", room.getRoomId());
         args.putInt("mNumberOfBeds", room.getNumberOfBeds());
-//        args.putInt("mRoomType", room.getRoomType());
         args.putString("mRoomName", room.getRoomName());
         args.putString("mDescription", room.getDescription());
 
@@ -50,19 +50,27 @@ public class RoomFragment extends Fragment {
 
     }
 
-    // Store instance variables based on arguments passed
+    /**
+     * Store instance variables based on arguments passed
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mRoomName = getArguments().getString("mRoomName");
         mDescription = getArguments().getString("mDescription");
         mNumberOfBeds = getArguments().getInt("mNumberOfBeds", 0);
-//        mRoomType = getArguments().getInt("mRoomType", 0);
         mImage = getArguments().getString("mImage");
         mRoomId = getArguments().getInt("mRoomId");
     }
 
-    // Inflate the view for the fragment based on layout XML
+    /**
+     * Inflate the view for the fragment based on layout XML
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

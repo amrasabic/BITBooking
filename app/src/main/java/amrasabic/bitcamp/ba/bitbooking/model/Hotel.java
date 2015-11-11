@@ -6,12 +6,14 @@ import org.parceler.Parcel;
 
 import java.util.List;
 
+/**
+ * This class represents Hotel model from REST service,
+ * with some attributes that are necessary in Android app.
+ */
 @Parcel
 public class Hotel {
 
-    public Integer getHotelId() {
-        return mHotelId;
-    }
+    // Declaration of parameters
 
     @SerializedName("id")
     private Integer mHotelId;
@@ -37,13 +39,17 @@ public class Hotel {
     @SerializedName("images")
     private List<Image> mRoomImages;
 
+    /**
+     * Empty constructor
+     */
     public Hotel() {
 
     }
 
-    public Hotel(String hotelName, int rating) {
-        mHotelName = hotelName;
-        mRating = rating;
+    // Declaration of default getters
+
+    public Integer getHotelId() {
+        return mHotelId;
     }
 
     public int getRating() {
@@ -70,6 +76,11 @@ public class Hotel {
         return mDescription;
     }
 
+    /**
+     * Method get Hotel image returns first image from Hotel images.
+     * If there is at least one image in array of images. Else, returns null.
+     * @return - image at index 0, else if array is empty returns null.
+     */
     public Image getHotelImage() {
         if(mRoomImages.size() > 0) {
             return mRoomImages.get(0);

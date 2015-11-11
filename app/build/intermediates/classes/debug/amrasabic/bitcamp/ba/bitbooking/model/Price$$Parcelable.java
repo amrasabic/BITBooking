@@ -6,21 +6,21 @@ import android.os.Parcelable.Creator;
 import org.parceler.Generated;
 import org.parceler.ParcelWrapper;
 
-@Generated(value = "org.parceler.ParcelAnnotationProcessor", date = "2015-11-04T02:15+0100")
+@Generated(value = "org.parceler.ParcelAnnotationProcessor", date = "2015-11-11T13:52+0100")
 public class Price$$Parcelable
     implements Parcelable, ParcelWrapper<amrasabic.bitcamp.ba.bitbooking.model.Price>
 {
 
     private amrasabic.bitcamp.ba.bitbooking.model.Price price$$4;
     @SuppressWarnings("UnusedDeclaration")
-    public final static Price$$Parcelable.Creator$$2 CREATOR = new Price$$Parcelable.Creator$$2();
+    public final static Price$$Parcelable.Creator$$3 CREATOR = new Price$$Parcelable.Creator$$3();
 
-    public Price$$Parcelable(android.os.Parcel parcel$$12) {
+    public Price$$Parcelable(android.os.Parcel parcel$$15) {
         price$$4 = new amrasabic.bitcamp.ba.bitbooking.model.Price();
-        price$$4 .mRoomId = parcel$$12 .readInt();
-        price$$4 .mDateFrom = parcel$$12 .readLong();
-        price$$4 .mCost = parcel$$12 .readInt();
-        price$$4 .mDateTo = parcel$$12 .readLong();
+        price$$4 .mRoomId = parcel$$15 .readInt();
+        price$$4 .mDateFrom = parcel$$15 .readLong();
+        price$$4 .mCost = parcel$$15 .readInt();
+        price$$4 .mDateTo = parcel$$15 .readLong();
     }
 
     public Price$$Parcelable(amrasabic.bitcamp.ba.bitbooking.model.Price price$$5) {
@@ -28,11 +28,11 @@ public class Price$$Parcelable
     }
 
     @Override
-    public void writeToParcel(android.os.Parcel parcel$$13, int flags) {
-        parcel$$13 .writeInt(price$$4 .mRoomId);
-        parcel$$13 .writeLong(price$$4 .mDateFrom);
-        parcel$$13 .writeInt(price$$4 .mCost);
-        parcel$$13 .writeLong(price$$4 .mDateTo);
+    public void writeToParcel(android.os.Parcel parcel$$16, int flags) {
+        parcel$$16 .writeInt(price$$4 .mRoomId);
+        parcel$$16 .writeLong(price$$4 .mDateFrom);
+        parcel$$16 .writeInt(price$$4 .mCost);
+        parcel$$16 .writeLong(price$$4 .mDateTo);
     }
 
     @Override
@@ -45,14 +45,14 @@ public class Price$$Parcelable
         return price$$4;
     }
 
-    private final static class Creator$$2
+    private final static class Creator$$3
         implements Creator<Price$$Parcelable>
     {
 
 
         @Override
-        public Price$$Parcelable createFromParcel(android.os.Parcel parcel$$14) {
-            return new Price$$Parcelable(parcel$$14);
+        public Price$$Parcelable createFromParcel(android.os.Parcel parcel$$17) {
+            return new Price$$Parcelable(parcel$$17);
         }
 
         @Override
