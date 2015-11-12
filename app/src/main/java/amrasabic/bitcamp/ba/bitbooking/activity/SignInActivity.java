@@ -6,10 +6,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.List;
 
 import amrasabic.bitcamp.ba.bitbooking.helpers.Helper;
 import amrasabic.bitcamp.ba.bitbooking.R;
@@ -18,6 +21,7 @@ import amrasabic.bitcamp.ba.bitbooking.api.BitBookingApi;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
+import retrofit.client.Header;
 import retrofit.client.Response;
 
 public class SignInActivity extends AppCompatActivity {
@@ -59,14 +63,13 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                api.signIn(String.valueOf(mEmail.getText()), String.valueOf(mPassword.getText()), new Callback<Integer>() {
+                api.signIn(String.valueOf(mEmail.getText()), String.valueOf(mPassword.getText()), new Callback<String>() {
                     @Override
-                    public void success(Integer response, Response response2) {
+                    public void success(String token, Response response2) {
 
                         SharedPreferences sharedPref = getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPref.edit();
-                        // TODO take token from header
-                        editor.putInt("userId", response);
+                        editor.putString("User_Token", token);
                         editor.commit();
                         // On success response open Hotel activity
                         Intent main = new Intent("android.intent.action.BOOKING");

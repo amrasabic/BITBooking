@@ -39,7 +39,7 @@ public class HotelActivity extends Activity {
     private RestAdapter adapter;
     private BitBookingApi api;
 
-    private Integer mUserToken;
+    private String mUserToken;
     private HotelsAdapter mHotelsAdapter;
     private DragListView mHotelsList;
 
@@ -52,22 +52,21 @@ public class HotelActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hotel_list);
-        // TODO modify - store token from header
+
         SharedPreferences sh = getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
-        // TODO dont pass ID - store and send token in header
-        mUserToken = sh.getInt("userId", 0);
+        mUserToken = sh.getString("User_Token", "");
 
         RequestInterceptor requestInterceptor = new RequestInterceptor() {
             @Override
             public void intercept(RequestInterceptor.RequestFacade request) {
-                request.addHeader("User-Token", Integer.toString(mUserToken));
+                request.addHeader("User_Token", mUserToken);
             }
         };
 
         adapter = new RestAdapter.Builder()
                 .setEndpoint(Helper.IP_ADDRESS)
                 .setRequestInterceptor(requestInterceptor)
-                        .build();
+                .build();
 
         api = adapter.create(BitBookingApi.class);
 

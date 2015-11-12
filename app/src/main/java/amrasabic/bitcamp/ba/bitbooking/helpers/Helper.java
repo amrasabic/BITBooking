@@ -5,6 +5,6 @@ package amrasabic.bitcamp.ba.bitbooking.helpers;
  */
 public class Helper {
 
-    public static final String IP_ADDRESS = "http://10.202.26.11:9000";
+    public static final String IP_ADDRESS = "http://10.202.28.67:9000";
 
 }
