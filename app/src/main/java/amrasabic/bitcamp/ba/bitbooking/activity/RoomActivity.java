@@ -1,5 +1,7 @@
 package amrasabic.bitcamp.ba.bitbooking.activity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import amrasabic.bitcamp.ba.bitbooking.extras.MyPagerAdapter;
 import amrasabic.bitcamp.ba.bitbooking.model.Room;
 
 import retrofit.Callback;
+import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -27,6 +30,8 @@ public class RoomActivity extends AppCompatActivity {
     private RestAdapter adapter;
     private BitBookingApi api;
 
+    private String mUserToken;
+
     /**
      * On create method
      * handles room list and creates fragment container for each room.
@@ -37,11 +42,21 @@ public class RoomActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.room_list);
 
+        SharedPreferences sh = getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
+        mUserToken = sh.getString("User_Token", "");
+
+        RequestInterceptor requestInterceptor = new RequestInterceptor() {
+            @Override
+            public void intercept(RequestInterceptor.RequestFacade request) {
+                request.addHeader("User_Token", mUserToken);
+            }
+        };
         // getting Hotel id from intent extra
         int id = getIntent().getExtras().getInt("id");
 
         adapter = new RestAdapter.Builder()
                 .setEndpoint(Helper.IP_ADDRESS)
+                .setRequestInterceptor(requestInterceptor)
                 .build();
 
         api = adapter.create(BitBookingApi.class);

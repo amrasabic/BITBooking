@@ -8,6 +8,7 @@ import amrasabic.bitcamp.ba.bitbooking.model.Room;
 import retrofit.Callback;
 import retrofit.client.Response;
 import retrofit.http.GET;
+import retrofit.http.Header;
 import retrofit.http.POST;
 import retrofit.http.Path;
 import retrofit.http.Query;
@@ -25,8 +26,9 @@ import retrofit.http.Query;
  */
 public interface BitBookingApi {
 
+
     @POST("/api/user/login")
-    public void signIn(@Query("email") String email, @Query("password") String password, Callback<Integer> callback);
+    public void signIn(@Query("email") String email, @Query("password") String password, Callback<String> callback);
 
     @POST("/user/register/save")
     public void signUp(@Query("email") String email, @Query("password") String password,
